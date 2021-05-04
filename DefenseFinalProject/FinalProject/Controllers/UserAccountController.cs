@@ -8,6 +8,7 @@ namespace FinalProject.Controllers
 {
     public class UserAccountController : Controller
     {
+        [HttpGet]
         public IActionResult SignUp()
         {
             return View();
