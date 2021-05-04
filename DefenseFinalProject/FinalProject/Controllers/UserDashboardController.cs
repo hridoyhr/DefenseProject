@@ -20,24 +20,13 @@ namespace FinalProject.Controllers
             return View();
         }
 
-        //[HttpGet]
-        //public IActionResult Profile()
-        //{
-        //    return View();
-        //}
+        [HttpGet]
+        public IActionResult StudentProfile()
+        {
+            return View();
+        }
 
-        //[HttpGet]
-        //public IActionResult AccountDetails()
-        //{
-        //    return View();
-        //}
 
-        //[HttpPost]
-        //public IActionResult AccountDetails(DashboardController model)
-        //{
-
-        //    return RedirectToAction(nameof(AccountDetails));
-        //}
 
 
     }
