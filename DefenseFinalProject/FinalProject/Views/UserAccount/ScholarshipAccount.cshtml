@@ -1,0 +1,212 @@
+﻿@model ScholarAccountModel;
+
+@{
+    ViewBag.Title = "Account Details";
+}
+
+<div class="body-bg-green register-form-div">
+    @* Navigation Start*@
+    <header>
+
+        <nav class="navbar navbar-expand-xl navbar-dark bg-dark fixed-top  py-0">
+            <div class="d-flex justify-content-between mx-2 w-100">
+
+                <div class="d-flex justify-content-start mx-2">
+                    <a class="navbar-brand navbar-text" href="/">
+                        <img src="/images/body.png" height="30" width="auto" class="visible-lg-inline-block mr-1" alt="">
+                        <span style="vertical-align: middle">Scholarship Monitoring System</span>
+                    </a>
+                </div>
+
+                <div class="d-flex justify-content-end mx-2">
+
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+
+                            <li class="nav-item mr-3">
+                                <h5>
+                                    <a class="nav-link text-success" asp-controller="Profile" asp-action="ProfileDetails">
+                                        <i class="fas fa-user mr-1"></i>Mahmudul
+                                        Hasan Hridoy
+                                    </a>
+                                </h5>
+                            </li>
+
+                            <li class="nav-item mx-1">
+                                <h5><a class="nav-link" asp-controller="UserAccount" asp-action="SignUp">LOGOUT<i class="fas fa-sign-out-alt ml-1"></i></a></h5>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    @* Navigation End*@
+
+    @*Account Details Start *@
+    <div id="site-wrapper" class="d-flex flex-column justify-content-center container ">
+
+        <div id="breadbrumbs" class="d-flex justify-content-start container mt-4 mb-2 w-80" aria-label="breadcrumbs">
+            <div class="btn-group container p-0" role="group">
+                <a asp-controller="UserDashboard" asp-action="UserHome">
+                    <button type="button" class="btn btn-sm btn-dark btn-arrow-right text-white">HOME</button>
+                </a>
+
+                <a asp-controller="UserAccount" asp-action="ScholarshipAccount">
+                    <button type="button" class="btn btn-sm btn-arrow-right btn-success text-white"> ACCOUNT DETAILS</button>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="d-flex flex-column justify-content-center container w-80">
+            <div class="border-content ">
+
+                <div class="d-flex flex-column header-details">
+                    <div class="d-flex">
+                        <div class="d-flex pt-1 pl-2 pr-2 pb-2">
+                            <img class="img-thumbnail float-lg-left header-image p-0"
+                                 src="/images/man.png" alt="">
+                        </div>
+                        <div class="d-flex flex-column pt-1 pl-2 pr-2 pb-2 w-100">
+                            <h3 class="text-white-50">
+                                Mahmudul Hasan Hridoy
+                                (<a href="/app/profile/2181"># 2181</a>)
+                            </h3>
+                            <table class="table table-sm table-hover table-borderless header-table table-css">
+                                <tbody>
+
+                                    <tr>
+                                        <td class="text-darkgray">Email Address:</td>
+                                        <td>
+                                            mahmudul35-205@diu.edu.bd
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="text-darkgray">Profile Type:</td>
+                                        <td>Applicant</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="strip-gh"></div>
+                </div>
+
+                <div class="d-flex flex-column pt-4 pl-4 pr-4">
+                    <div class="d-flex justify-content-between">
+                        <h4 class="text-greenpigment font-weight-bold">
+                            <i class="fas fa-user-shield mr-2"></i>Personal
+                            Details
+                        </h4>
+
+                    </div>
+                    <table class="table table-sm table-hover border table-css">
+                        <tbody>
+
+                            <tr>
+                                <td>Mobile Phone #:</td>
+                                <th>
+                                    01872944289 <a asp-controller="Profile" asp-action="ChangeMobileNumber">
+                                        <i class="fas fa-edit ml-2 mr-1"></i>Change
+                                    </a>
+                                </th>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="d-flex flex-column pt-4 pl-4 pr-4">
+                    <div class="d-flex justify-content-between">
+
+                        <h4 class="text-greenpigment font-weight-bold">
+                            <i class="fas fa-user-secret mr-2"></i>Scholarship Fund Details
+                        </h4>
+                    </div>
+                    <br />
+
+                </div>
+
+                <table class="table table-sm table-hover border table-css">
+                    <tr>
+                        <td>Total Amount</td>
+                        <th>
+                        <th>20000 tk</th>
+                        </th>
+                    </tr>
+                </table>
+
+                <table class="table table-sm table-hover border table-css">
+                    <thead></thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Educational Purpose</td>
+                            <th>
+                                10000 tk
+                                <a asp-controller="Dashboard" asp-action="Payment">
+                                    <button id="submit" type="submit" class="btn btn-sm btn-dark text-white-50" style="font-size: 15px; margin-left: 60%; font-weight: bold">
+                                        Payment
+                                    </button>
+                                </a>
+                            </th>
+
+                        </tr>
+                        <tr>
+                            <td>Health Purpose</td>
+                            <th>
+                                4000 tk
+                                <a asp-controller="Dashboard" asp-action="Payment">
+                                    <button id="submit" type="submit" class="btn btn-sm btn-dark text-white-50" style="font-size: 15px; margin-left: 62%; font-weight: bold">
+                                        Payment
+                                    </button>
+                                </a>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <td>Food's</td>
+                            <th>
+                                3000 tk
+                                <a asp-controller="Dashboard" asp-action="Payment">
+                                    <button id="submit" type="submit" class="btn btn-sm btn-dark text-white-50" style="font-size: 15px; margin-left: 62%; font-weight: bold">
+                                        Payment
+                                    </button>
+                                </a>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <td>Other's</td>
+                            <th>
+                                3000 tk
+                                <a asp-controller="Dashboard" asp-action="Payment">
+                                    <button id="submit" type="submit" class="btn btn-sm btn-dark text-white-50" style="font-size: 15px; margin-left: 62%; font-weight: bold">
+                                        Payment
+                                    </button>
+                                </a>
+                            </th>
+                        </tr>
+                </table>
+            </div>
+
+            <div class="strip-gh mt-4"></div>
+            <div class="strip-dh"></div>
+
+        </div>
+    </div>
+
+</div>
+
+@* Account Details End *@
+</div>
+
