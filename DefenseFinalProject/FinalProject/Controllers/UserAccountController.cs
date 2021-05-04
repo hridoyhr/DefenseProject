@@ -30,6 +30,13 @@ namespace FinalProject.Controllers
             return View();
         }
 
+        //Student Fund Account
+        [HttpGet]
+        public IActionResult ScholarshipAccount()
+        {
+            return View();
+        }
+
         //Payment Option
         [HttpGet]
         public IActionResult Payment()

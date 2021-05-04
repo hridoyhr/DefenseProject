@@ -451,3 +451,4 @@ G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProj
 G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\UserDashboard\UserHome.cshtml.g.cs
 G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\UserDashboard\ScholarshipDetails.cshtml.g.cs
 G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\UserAccount\Payment.cshtml.g.cs
+G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\UserAccount\ScholarshipAccount.cshtml.g.cs
