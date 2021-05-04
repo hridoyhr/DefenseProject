@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FinalProject.Models.UserAccount.Scholarship;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +14,18 @@ namespace FinalProject.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult SignUp(SignInResult model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            return RedirectToAction(nameof(SignIn));
+        }
 
-        public IActionResult Login()
+        [HttpGet]
+        public IActionResult SignIn()
         {
             return View();
         }
