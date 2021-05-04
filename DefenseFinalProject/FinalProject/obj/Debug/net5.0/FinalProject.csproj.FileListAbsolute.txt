@@ -447,3 +447,4 @@ G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProj
 G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\Shared\_Layout-Scholar.cshtml.g.cs
 G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\UserAccount\SignUp.cshtml.g.cs
+G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\UserAccount\SignIn.cshtml.g.cs
