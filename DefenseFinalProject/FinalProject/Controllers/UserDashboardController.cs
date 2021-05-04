@@ -14,14 +14,14 @@ namespace FinalProject.Controllers
             return View();
         }
 
-        //[HttpGet]
-        //public IActionResult Profile()
-        //{
-        //    return View();
-        //}
+        [HttpGet]
+        public IActionResult ScholarshipDetails()
+        {
+            return View();
+        }
 
         //[HttpGet]
-        //public IActionResult ApplicationCategory()
+        //public IActionResult Profile()
         //{
         //    return View();
         //}
@@ -39,10 +39,6 @@ namespace FinalProject.Controllers
         //    return RedirectToAction(nameof(AccountDetails));
         //}
 
-        //[HttpGet]
-        //public IActionResult Payment()
-        //{
-        //    return View();
-        //}
+
     }
 }

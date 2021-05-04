@@ -29,5 +29,12 @@ namespace FinalProject.Controllers
         {
             return View();
         }
+
+        //Payment Option
+        [HttpGet]
+        public IActionResult Payment()
+        {
+            return View();
+        }
     }
 }
