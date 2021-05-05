@@ -50,10 +50,10 @@ namespace FinalProject.Controllers
             return View();
         }
         //User Password Changes
-        [HttpGet]
-        public IActionResult UserPasswordChange()
-        {
-            return View();
-        }
+        //[HttpGet]
+        //public IActionResult UserPasswordChange()
+        //{
+        //    return View();
+        //}
     }
 }
