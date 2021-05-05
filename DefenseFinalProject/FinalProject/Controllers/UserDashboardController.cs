@@ -20,11 +20,11 @@ namespace FinalProject.Controllers
             return View();
         }
 
-        [HttpGet]
-        public IActionResult StudentProfile()
-        {
-            return View();
-        }
+        //[HttpGet]
+        //public IActionResult StudentProfile()
+        //{
+        //    return View();
+        //}
 
 
 
