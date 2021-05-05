@@ -454,3 +454,4 @@ G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProj
 G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\UserAccount\ScholarshipAccount.cshtml.g.cs
 G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\UserDashboard\UserProfile.cshtml.g.cs
 G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\UserDashboard\UserProfileDetails.cshtml.g.cs
+G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\UserAccount\UserChangeMobile.cshtml.g.cs
