@@ -20,12 +20,17 @@ namespace FinalProject.Controllers
             return View();
         }
 
-        //[HttpGet]
-        //public IActionResult StudentProfile()
-        //{
-        //    return View();
-        //}
+        [HttpGet]
+        public IActionResult UserProfile()
+        {
+            return View();
+        }
 
+        [HttpGet]
+        public IActionResult UserProfileDetails()
+        {
+            return View();
+        }
 
 
 
