@@ -39,7 +39,7 @@
                             </li>
 
                             <li class="nav-item mx-1">
-                                <h5><a asp-controller="UserAccount" asp-action="SignUp" class="nav-link text-success">LOGOUT<i class="fas fa-sign-out-alt ml-1"></i></a></h5>
+                                <h5><a asp-controller="UserAccount" asp-action="SignUp" class="nav-link text-white-50">LOGOUT<i class="fas fa-sign-out-alt ml-1"></i></a></h5>
                             </li>
                         </ul>
                     </div>
@@ -90,13 +90,11 @@
                         <h4 class="mb-0 text-dark"><strong>CHANGE MOBILE NUMBER</strong></h4>
                         <small class="text-info mt-0">
                             Logged in as
-                            <a class="text-info" href="/app/profile/2181">Mahmudul Hasan Hridoy</a>
+                            <a class="text-info" asp-controller="UserDashboard" asp-action="UserProfileDetails">Mahmudul Hasan Hridoy</a>
                         </small>
                     </div>
 
                     <form class="my-2" accept-charset="UTF-8" method="POST">
-                        <input type="hidden" name="csrfmiddlewaretoken"
-                               value="rpJJ0xZk0SmQnqgSCS0SgZ4GCdXVur4z35rYZa8u1fEJmvrd8xxeaZlwcQWujLiN">
 
                         <div class="form-row">
 
