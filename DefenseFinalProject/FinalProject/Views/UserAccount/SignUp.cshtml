@@ -31,8 +31,8 @@
                 <h4 class="mb-0"><strong>STUDENT SIGNUP</strong></h4>
                 <p><small class="text-secondary mt-0">(new applicants only)</small></p>
 
-                <form accept-charset="UTF-8" id="register-form" method="POST" 
-                      class="" asp-controller="Account" asp-action="Register">
+                <form accept-charset="UTF-8" id="register-form" method="POST"
+                      class="" asp-controller="UserAccount" asp-action="SignUp">
 
                     <div class="form-row">
                         <div class="form-group col-lg-12">
@@ -154,9 +154,9 @@
                     </div>
 
                     <div class="d-flex justify-content-end mt-4">
-                        <a  asp-controller="UserAccount" asp-action="SignIn" class="btn btn-sm btn-green">
+                        <button type="submit" class="btn btn-sm btn-green">
                             SIGN UP<i class="fas fa-user-plus ml-2"></i>
-                        </a>
+                        </button>
                     </div>
 
                 </form>

@@ -1,4 +1,5 @@
 ﻿using FinalProject.Models.UserAccount.Scholarship;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,19 +10,50 @@ namespace FinalProject.Controllers
 {
     public class UserAccountController : Controller
     {
+        private readonly UserManager<IdentityUser> userManager;
+        private readonly SignInManager<IdentityUser> signInManager;
+
+        public UserAccountController(UserManager<IdentityUser> userManager,
+            SignInManager<IdentityUser> signInManager)
+        {
+            this.userManager = userManager;
+            this.signInManager = signInManager;
+        }
+
         [HttpGet]
         public IActionResult SignUp()
         {
             return View();
         }
+
         [HttpPost]
-        public IActionResult SignUp(SignInResult model)
+        public async Task<IActionResult> SignUp(SignUpModel model)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return View(model);
+                var user = new IdentityUser
+                {
+                    UserName = model.FullName,
+                    Email = model.EmailAddress,
+                    PhoneNumber = model.MobilePhone,
+                    PasswordHash = model.Password
+
+                };
+
+                var result = await userManager.CreateAsync(user, model.Password);
+
+                if (result.Succeeded)
+                {
+                    await signInManager.SignInAsync(user, isPersistent: false);
+                    return RedirectToAction("SignIn", "UserAccount");
+                }
+
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
             }
-            return RedirectToAction(nameof(SignIn));
+            return View(model);
         }
 
         [HttpGet]
