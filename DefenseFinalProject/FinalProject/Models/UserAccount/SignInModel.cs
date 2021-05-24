@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject.Models.UserAccount.Scholarship
 {
-    public class SingInModel
+    public class SignInModel
     {
         public int Id { get; set; }
 
