@@ -1,7 +1,7 @@
-﻿@model ScholarAccountModel;
+﻿@model StudentAccountModel;
 
 @{
-    ViewBag.Title = "Account Details";
+    ViewBag.Title = "Student Account Details";
 }
 
 <div class="body-bg-green register-form-div">
@@ -31,14 +31,13 @@
                             <li class="nav-item mr-3">
                                 <h5>
                                     <a class="nav-link text-success" asp-controller="Profile" asp-action="ProfileDetails">
-                                        <i class="fas fa-user mr-1"></i>Mahmudul
-                                        Hasan Hridoy
+                                        <i class="fas fa-user mr-1"></i>Admin
                                     </a>
                                 </h5>
                             </li>
 
                             <li class="nav-item mx-1">
-                                <h5><a class="nav-link" asp-controller="UserAccount" asp-action="SignUp">LOGOUT<i class="fas fa-sign-out-alt ml-1"></i></a></h5>
+                                <h5><a class="nav-link" asp-controller="Account" asp-action="Register">LOGOUT<i class="fas fa-sign-out-alt ml-1"></i></a></h5>
                             </li>
                         </ul>
                     </div>
@@ -53,12 +52,12 @@
 
         <div id="breadbrumbs" class="d-flex justify-content-start container mt-4 mb-2 w-80" aria-label="breadcrumbs">
             <div class="btn-group container p-0" role="group">
-                <a asp-controller="UserDashboard" asp-action="UserHome">
+                <a asp-controller="AdminDashboard" asp-action="AdminHome">
                     <button type="button" class="btn btn-sm btn-dark btn-arrow-right text-white">HOME</button>
                 </a>
 
-                <a asp-controller="UserAccount" asp-action="ScholarshipAccount">
-                    <button type="button" class="btn btn-sm btn-arrow-right btn-success text-white"> ACCOUNT DETAILS</button>
+                <a asp-controller="AdminDashboard" asp-action="StudentAccount">
+                    <button type="button" class="btn btn-sm btn-arrow-right btn-success text-white">STUDENT'S ACCOUNT</button>
                 </a>
 
             </div>
@@ -114,7 +113,7 @@
                             <tr>
                                 <td>Mobile Phone #:</td>
                                 <th>
-                                    01872944289 <a asp-controller="UserAccount" asp-action="UserChangeMobile">
+                                    01872944289 <a asp-controller="Profile" asp-action="ChangeMobileNumber">
                                         <i class="fas fa-edit ml-2 mr-1"></i>Change
                                     </a>
                                 </th>
@@ -153,47 +152,27 @@
                             <td>Educational Purpose</td>
                             <th>
                                 10000 tk
-                                <a asp-controller="UserAccount" asp-action="Payment">
-                                    <button id="submit" type="submit" class="btn btn-sm btn-dark text-white-50" style="font-size: 15px; margin-left: 60%; font-weight: bold">
-                                        Payment
-                                    </button>
-                                </a>
                             </th>
 
                         </tr>
                         <tr>
+
                             <td>Health Purpose</td>
                             <th>
                                 4000 tk
-                                <a asp-controller="UserAccount" asp-action="Payment">
-                                    <button id="submit" type="submit" class="btn btn-sm btn-dark text-white-50" style="font-size: 15px; margin-left: 62%; font-weight: bold">
-                                        Payment
-                                    </button>
-                                </a>
                             </th>
                         </tr>
 
                         <tr>
-                            <td>Food's</td>
+                            <td>Books</td>
                             <th>
-                                3000 tk
-                                <a asp-controller="UserAccount" asp-action="Payment">
-                                    <button id="submit" type="submit" class="btn btn-sm btn-dark text-white-50" style="font-size: 15px; margin-left: 62%; font-weight: bold">
-                                        Payment
-                                    </button>
-                                </a>
+                                2000 tk
                             </th>
                         </tr>
-
                         <tr>
-                            <td>Other's</td>
+                            <td>Food</td>
                             <th>
-                                3000 tk
-                                <a asp-controller="UserAccount" asp-action="Payment">
-                                    <button id="submit" type="submit" class="btn btn-sm btn-dark text-white-50" style="font-size: 15px; margin-left: 62%; font-weight: bold">
-                                        Payment
-                                    </button>
-                                </a>
+                                4000 tk
                             </th>
                         </tr>
                 </table>
@@ -209,4 +188,3 @@
 
 @* Account Details End *@
 </div>
-

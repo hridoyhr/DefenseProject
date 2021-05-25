@@ -47,8 +47,22 @@ using FinalProject.Models.UserAccount.Account;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\Views\_ViewImports.cshtml"
+using FinalProject.Models.AdminAccount;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 7 "G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\Views\_ViewImports.cshtml"
+using FinalProject.Web.Models.AdminDashboard;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1865201abccb77cba0a5e3d03094ef4d2363f403", @"/Views/UserDashboard/UserProfileDetails.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ffe854de9341e34f43e52a5a37262b0ff0af09a0", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2faf5c0bd308aa5232ecf9d030224b1bf52b84e5", @"/Views/_ViewImports.cshtml")]
     public class Views_UserDashboard_UserProfileDetails : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<UserProfileDetailsModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("nav-link text-success"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -122,7 +136,7 @@ using FinalProject.Models.UserAccount.Account;
                             <li class=""nav-item mr-3"">
                                 <h5>
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1865201abccb77cba0a5e3d03094ef4d2363f4038748", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1865201abccb77cba0a5e3d03094ef4d2363f4039242", async() => {
                 WriteLiteral("\r\n                                        <i class=\"fas fa-user mr-1\"></i>Mahmudul\r\n                                        Hasan Hridoy\r\n                                    ");
             }
             );
@@ -141,7 +155,7 @@ using FinalProject.Models.UserAccount.Account;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                </h5>\r\n                            </li>\r\n\r\n                            <li class=\"nav-item mx-1\">\r\n                                <h5>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1865201abccb77cba0a5e3d03094ef4d2363f40310546", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1865201abccb77cba0a5e3d03094ef4d2363f40311040", async() => {
                 WriteLiteral("LOGOUT<i class=\"fas fa-sign-out-alt ml-1\"></i>");
             }
             );
@@ -166,7 +180,7 @@ using FinalProject.Models.UserAccount.Account;
         <div id=""breadbrumbs"" class=""d-flex justify-content-start container mt-4 mb-2 w-80"" aria-label=""breadcrumbs"">
             <div class=""btn-group container p-0"" role=""group"">
                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1865201abccb77cba0a5e3d03094ef4d2363f40312593", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1865201abccb77cba0a5e3d03094ef4d2363f40313087", async() => {
                 WriteLiteral("\r\n                    <button type=\"button\" class=\"btn btn-sm btn-dark btn-arrow-right text-white\">HOME</button>\r\n                ");
             }
             );
@@ -184,7 +198,7 @@ using FinalProject.Models.UserAccount.Account;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1865201abccb77cba0a5e3d03094ef4d2363f40314107", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1865201abccb77cba0a5e3d03094ef4d2363f40314601", async() => {
                 WriteLiteral("\r\n                    <button type=\"button\" class=\"btn btn-sm btn-arrow-right btn-dark text-white\">PROFILE DASH</button>\r\n                ");
             }
             );
@@ -202,7 +216,7 @@ using FinalProject.Models.UserAccount.Account;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1865201abccb77cba0a5e3d03094ef4d2363f40315625", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1865201abccb77cba0a5e3d03094ef4d2363f40316119", async() => {
                 WriteLiteral("\r\n                    <button type=\"button\" class=\"btn btn-sm btn-arrow-right btn-success text-white\">DETAILS</button>\r\n                ");
             }
             );
@@ -278,7 +292,7 @@ using FinalProject.Models.UserAccount.Account;
                                 <td>Mobile Phone #:</td>
                                 <th>
                                     01872944289 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1865201abccb77cba0a5e3d03094ef4d2363f40319690", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1865201abccb77cba0a5e3d03094ef4d2363f40320184", async() => {
                 WriteLiteral("\r\n                                        <i class=\"fas fa-edit ml-2 mr-1\"></i>Change\r\n                                    ");
             }
             );
