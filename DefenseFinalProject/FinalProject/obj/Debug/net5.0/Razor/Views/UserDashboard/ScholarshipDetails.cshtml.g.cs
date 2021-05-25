@@ -47,8 +47,22 @@ using FinalProject.Models.UserAccount.Account;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\Views\_ViewImports.cshtml"
+using FinalProject.Models.AdminAccount;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 7 "G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\Views\_ViewImports.cshtml"
+using FinalProject.Web.Models.AdminDashboard;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a95a7d6e2ea015fbf97f7037427788a25944344b", @"/Views/UserDashboard/ScholarshipDetails.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ffe854de9341e34f43e52a5a37262b0ff0af09a0", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2faf5c0bd308aa5232ecf9d030224b1bf52b84e5", @"/Views/_ViewImports.cshtml")]
     public class Views_UserDashboard_ScholarshipDetails : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ScholarshipModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("nav-link text-success"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -123,7 +137,7 @@ using FinalProject.Models.UserAccount.Account;
                             <li class=""nav-item mr-3"">
                                 <h5>
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a95a7d6e2ea015fbf97f7037427788a25944344b9050", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a95a7d6e2ea015fbf97f7037427788a25944344b9544", async() => {
                 WriteLiteral("\r\n                                        <i class=\"fas fa-user mr-1\"></i>Mahmudul\r\n                                        Hasan Hridoy\r\n                                    ");
             }
             );
@@ -142,7 +156,7 @@ using FinalProject.Models.UserAccount.Account;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                </h5>\r\n                            </li>\r\n\r\n                            <li class=\"nav-item mx-1\">\r\n                                <h5>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a95a7d6e2ea015fbf97f7037427788a25944344b10848", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a95a7d6e2ea015fbf97f7037427788a25944344b11342", async() => {
                 WriteLiteral("LOGOUT<i class=\"fas fa-sign-out-alt ml-1\"></i>");
             }
             );
@@ -170,7 +184,7 @@ using FinalProject.Models.UserAccount.Account;
             <div class=""btn-group container p-0""
                  role=""group"">
                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a95a7d6e2ea015fbf97f7037427788a25944344b12945", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a95a7d6e2ea015fbf97f7037427788a25944344b13439", async() => {
                 WriteLiteral("\r\n                    <button type=\"button\" class=\"btn btn-sm btn-dark btn-arrow-right text-white-50\">HOME</button>\r\n                ");
             }
             );
@@ -188,7 +202,7 @@ using FinalProject.Models.UserAccount.Account;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a95a7d6e2ea015fbf97f7037427788a25944344b14462", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a95a7d6e2ea015fbf97f7037427788a25944344b14956", async() => {
                 WriteLiteral("\r\n                    <button type=\"button\" class=\"btn btn-sm btn-success btn-arrow-right text-white\">SCHOLARSHIP DETAILS</button>\r\n                ");
             }
             );
@@ -224,7 +238,7 @@ using FinalProject.Models.UserAccount.Account;
             BeginWriteAttribute("alt", " alt=\"", 3516, "\"", 3522, 0);
             EndWriteAttribute();
             WriteLiteral(">\r\n                </div>\r\n\r\n                <div class=\"d-flex justify-content-end mt-2 p-3\">\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a95a7d6e2ea015fbf97f7037427788a25944344b16803", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a95a7d6e2ea015fbf97f7037427788a25944344b17297", async() => {
                 WriteLiteral("\r\n                        <button class=\"btn btn-sm btn-green \" style=\"font-size: 20px\">\r\n                            Accounts\r\n                        </button>\r\n                    ");
             }
             );

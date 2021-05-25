@@ -1,0 +1,116 @@
+﻿@model StudentInfoModel;
+
+@{
+    ViewBag.Title = "Admin Dashboard";
+}
+
+<div class="body-bg-green register-form-div">
+    @* Navbar Start *@
+    <header>
+
+        <nav class="navbar navbar-expand-xl navbar-dark bg-dark fixed-top py-0">
+            <div class="d-flex justify-content-between mx-2 w-100">
+
+                <div class="d-flex justify-content-start mx-2">
+                    <a class="navbar-brand navbar-text" href="/">
+                        <img src="/images/body.png" height="30" width="auto" class="visible-lg-inline-block mr-1" alt="">
+                        <span style="vertical-align: middle">Scholarship Monitoring System</span>
+                    </a>
+                </div>
+
+                <div class="d-flex justify-content-end mx-2">
+
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+
+                            <li class="nav-item mr-3">
+                                <h5>
+                                    <a class="nav-link text-success">
+                                        <i class="fas fa-user mr-1"></i>Admin
+                                    </a>
+                                </h5>
+                            </li>
+
+                            <li class="nav-item mx-1">
+                                <h5><a class="nav-link" asp-controller="Account" asp-action="Register">LOGOUT
+                                    <i class="fas fa-sign-out-alt ml-1"></i></a></h5>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    @* Navbar End *@
+
+    @* Dashboard Home start *@
+
+    <div id="site-wrapper" class="d-flex flex-column justify-content-center container ">
+
+        <div id="breadbrumbs" class="d-flex justify-content-start container mt-5 mb-2 w-80" aria-label="breadcrumbs">
+            <div class="btn-group container p-0" role="group">
+
+                <a asp-controller="AdminDashboard" asp-action="AdminHome">
+                    <button type="button" class="btn btn-sm btn-dark btn-arrow-right text-white">HOME</button>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="d-flex flex-column justify-content-center container w-80">
+            <div class="border-content ">
+
+                <div class="text-center bg-dark p-2">
+                    <h1 class="text-white-50 mb-0"><strong>Admin Dashboard</strong></h1>
+
+                    <small class="text-info mt-0">
+                        Logged in as
+                        <a class="text-info" asp-controller="Profile" asp-action="ProfileDetails">Admin</a>
+                    </small>
+                </div>
+
+                <div class="strip-gh"></div>
+
+                <div class="d-lg-flex justify-content-between w-100 p-4">
+                    <a asp-controller="AdminDashboard" asp-action="StudentInfo" class="dash-item-link">
+
+                        <div class="dash-item d-flex flex-column justify-content-center text-center align-items-center">
+                            <div class="d-flex p-1 mt-2 dash-item-icon"><i class="fas fa-file-alt fa-5x"></i></div>
+                            <div class="d-flex p-1">
+                                <h5 class="text-white-50">Student's Information </h5>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a asp-controller="AdminDashboard" asp-action="StudentAccount" class="dash-item-link">
+
+                        <div class="dash-item d-flex flex-column justify-content-center text-center align-items-center">
+                            <div class="d-flex p-1 mt-2 dash-item-icon"><i class="fas fa-hand-holding-usd fa-5x"></i></div>
+                            <div class="d-flex p-1">
+                                <h5 class="text-white-50">Student Account</h5>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a asp-controller="AdminDashboard" asp-action="Transaction" class="dash-item-link">
+
+                        <div class="dash-item d-flex flex-column justify-content-center text-center align-items-center">
+                            <div class="d-flex p-1 mt-2 dash-item-icon"><i class="fas fa-id-card fa-5x"></i></div>
+                            <div class="d-flex p-1">
+                                <h5 class="text-white-50">Transaction Details</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    @* Dashboard Home End *@
+</div>
