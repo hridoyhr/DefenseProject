@@ -1,5 +1,4 @@
-﻿
-@model UserMobileModel;
+﻿@model UserMobileChangeModel
 
 @{
     ViewBag.Title = "Change Mobile Number";
@@ -14,7 +13,7 @@
 
                 <div class="d-flex justify-content-start mx-2">
                     <a class="navbar-brand navbar-text" href="/">
-                        <img src="/images/body.png" height="30" class="visible-lg-inline-block mr-1" alt="">
+                        <img src="/images/body.png" height="30" width="auto" class="visible-lg-inline-block mr-1" alt="">
                         <span style="vertical-align: middle">Scholarship Monitoring System</span>
                     </a>
                 </div>
@@ -31,7 +30,7 @@
 
                             <li class="nav-item mr-3">
                                 <h5>
-                                    <a class="nav-link text-success" asp-controller="Userdashboard" asp-action="UserProfileDetails">
+                                    <a class="nav-link text-success" asp-controller="Profile" asp-action="ProfileDetails">
                                         <i class="fas fa-user mr-1"></i>Mahmudul
                                         Hasan Hridoy
                                     </a>
@@ -39,7 +38,7 @@
                             </li>
 
                             <li class="nav-item mx-1">
-                                <h5><a asp-controller="UserAccount" asp-action="SignUp" class="nav-link text-white-50">LOGOUT<i class="fas fa-sign-out-alt ml-1"></i></a></h5>
+                                <h5><a asp-controller="Account" asp-action="Register">LOGOUT<i class="fas fa-sign-out-alt ml-1"></i></a></h5>
                             </li>
                         </ul>
                     </div>
@@ -55,11 +54,11 @@
         <div id="breadbrumbs" class="d-flex justify-content-start container mt-5 mb-2 w-md-85 w-lg-90 w-xl-80"
              aria-label="breadcrumbs">
             <div class="btn-group container p-0" role="group">
-                <a asp-controller="UserDashboard" asp-action="UserHome">
+                <a asp-controller="Dashboard" asp-action="Home">
                     <button type="button" class="btn btn-sm btn-dark btn-arrow-right text-white-50">HOME</button>
                 </a>
 
-                <a asp-controller="UserDashboard" asp-action="UserProfile">
+                <a asp-controller="Dashboard" asp-action="Profile">
                     <button type="button" class="btn btn-sm btn-arrow-right btn-dark text-white">PROFILE DASH</button>
                 </a>
                 <a asp-controller="UserAccount" asp-action="UserChangeMobile">
@@ -90,11 +89,13 @@
                         <h4 class="mb-0 text-dark"><strong>CHANGE MOBILE NUMBER</strong></h4>
                         <small class="text-info mt-0">
                             Logged in as
-                            <a class="text-info" asp-controller="UserDashboard" asp-action="UserProfileDetails">Mahmudul Hasan Hridoy</a>
+                            <a class="text-info" href="/app/profile/2181">Mahmudul Hasan Hridoy</a>
                         </small>
                     </div>
 
                     <form class="my-2" accept-charset="UTF-8" method="POST">
+                        <input type="hidden" name="csrfmiddlewaretoken"
+                               value="rpJJ0xZk0SmQnqgSCS0SgZ4GCdXVur4z35rYZa8u1fEJmvrd8xxeaZlwcQWujLiN">
 
                         <div class="form-row">
 
@@ -125,9 +126,14 @@
                             </button>
                         </div>
                     </form>
+
                 </div>
+
+
             </div>
         </div>
+
+
     </div>
 </div>
 @* Change Mobile Number End *@

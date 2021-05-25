@@ -14,6 +14,6 @@ namespace FinalProject.Data
         {
         }
 
-        public DbSet<SignUpModel> SignUpModels { get; set; }
+        public DbSet<SignUpModel> StudentInfo { get; set; }
     }
 }
