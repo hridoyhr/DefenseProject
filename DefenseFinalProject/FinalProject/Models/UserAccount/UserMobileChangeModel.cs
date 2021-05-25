@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject.Models.UserAccount.Account
 {
-    public class UserMobileModel
+    public class UserMobileChangeModel
     {
     }
 }
