@@ -13,35 +13,54 @@ namespace FinalProject.Controllers
 {
     public class UserAccountController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly UserManager<IdentityUser> userManager;
+        private readonly SignInManager<IdentityUser> signInManager;
 
-        public UserAccountController(ApplicationDbContext context)
+        public UserAccountController(UserManager<IdentityUser> userManager,
+            SignInManager<IdentityUser> signInManager)
         {
-            _context = context;
+            this.userManager = userManager;
+            this.signInManager = signInManager;
         }
 
         [HttpGet]
-        public IActionResult SignUp(int id = 0)
+        public IActionResult SignUp()
         {
-            if (id == 0)
-                return View(new SignUpModel());
-            else
-                return View(_context.StudentInfo.Find(id));
+            return View();
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> SignUp(SignUpModel student)
+        public async Task<IActionResult> SignUp(SignUpModel model)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                if (student.Id == 0)
-                    _context.Add(student);
+                // Copy data from RegisterViewModel to IdentityUser
+                var user = new IdentityUser
+                {
+                    UserName = model.EmailAddress,
+                    Email = model.EmailAddress
+                };
 
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(SignIn));
+                // Store user data in AspNetUsers database table
+                var result = await userManager.CreateAsync(user, model.Password);
+
+                // If user is successfully created, sign-in the user using
+                // SignInManager and redirect to index action of HomeController
+                if (result.Succeeded)
+                {
+                    await signInManager.SignInAsync(user, isPersistent: false);
+                    return RedirectToAction("SignIn", "UserAccount");
+                }
+
+                // If there are any errors, add them to the ModelState object
+                // which will be displayed by the validation summary tag helper
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
             }
-            return View(student);
+
+            return View(model);
         }
 
         [HttpGet]
@@ -63,16 +82,57 @@ namespace FinalProject.Controllers
         }
 
         [HttpGet]
-        [ValidateAntiForgeryToken]
         public IActionResult UserChangeMobile()
         {
             return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UserChangeMobile(SignUpModel student)
+        {
+            
+            return View(student);
         }
 
         [HttpGet]
         public IActionResult UserPasswordChange()
         {
             return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UserPasswordChange(UserPasswordChangeModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await userManager.GetUserAsync(User);
+                if (user == null)
+                {
+                    return RedirectToAction("Login");
+                }
+
+                // ChangePasswordAsync changes the user password
+                var result = await userManager.ChangePasswordAsync(user,
+                    model.OldPassword, model.NewPassword);
+
+                // The new password did not meet the complexity rules or
+                // the current password is incorrect. Add these errors to
+                // the ModelState and rerender ChangePassword view
+                if (!result.Succeeded)
+                {
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
+                    return View();
+                }
+
+                // Upon successfully changing the password refresh sign-in cookie
+                await signInManager.RefreshSignInAsync(user);
+                return View("ChangePasswordConfirmation");
+            }
+
+            return View(model);
         }
     }
 }
