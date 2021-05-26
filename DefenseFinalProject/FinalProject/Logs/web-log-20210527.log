@@ -86,3 +86,5 @@ System.InvalidOperationException: The view 'UserProfile' was not found. The foll
 2021-05-27 00:08:43.222 +06:00 [INF] Application Starting up
 2021-05-27 00:08:44.958 +06:00 [WRN] Change password failed for user.
 2021-05-27 00:09:39.333 +06:00 [WRN] Change password failed for user.
+2021-05-27 00:12:26.693 +06:00 [INF] Application Starting up
+2021-05-27 00:12:28.658 +06:00 [WRN] Change password failed for user.
