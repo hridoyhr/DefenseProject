@@ -31,8 +31,8 @@
                             <li class="nav-item mr-3">
                                 <h5>
                                     <a class="nav-link text-success" asp-controller="Profile" asp-action="ProfileDetails">
-                                        <i class="fas fa-user mr-1"></i>Mahmudul
-                                        Hasan Hridoy
+                                        <i class="fas fa-user mr-1"></i>
+                                        @User.Identity.Name
                                     </a>
                                 </h5>
                             </li>
@@ -73,7 +73,7 @@
 
                     <small class="text-info mt-0">
                         Logged in as
-                        <a class="text-info" asp-controller="UserDashboard" asp-action="UserProfileDetails">Mahmudul Hasan Hridoy</a>
+                        <a class="text-info" asp-controller="UserDashboard" asp-action="UserProfileDetails">@User.Identity.Name</a>
                     </small>
 
                 </div>

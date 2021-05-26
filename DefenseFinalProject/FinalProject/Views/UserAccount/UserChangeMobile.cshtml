@@ -1,7 +1,7 @@
-﻿@model UserMobileChangeModel
+﻿@model UserMobileChangeModel;
 
 @{
-    ViewBag.Title = "Change Mobile Number";
+    ViewBag.Title = "Change Password";
 }
 
 <div class="body-bg-green register-form-div">
@@ -13,7 +13,7 @@
 
                 <div class="d-flex justify-content-start mx-2">
                     <a class="navbar-brand navbar-text" href="/">
-                        <img src="/images/body.png" height="30" width="auto" class="visible-lg-inline-block mr-1" alt="">
+                        <img src="/images/body.png" height="30" class="visible-lg-inline-block mr-1" alt="">
                         <span style="vertical-align: middle">Scholarship Monitoring System</span>
                     </a>
                 </div>
@@ -30,15 +30,15 @@
 
                             <li class="nav-item mr-3">
                                 <h5>
-                                    <a class="nav-link text-success" asp-controller="Profile" asp-action="ProfileDetails">
-                                        <i class="fas fa-user mr-1"></i>Mahmudul
-                                        Hasan Hridoy
+                                    <a class="nav-link text-success" asp-controller="UserDashboard" asp-action="UserProfileDetails">
+                                        <i class="fas fa-user mr-1"></i>
+                                        @User.Identity.Name
                                     </a>
                                 </h5>
                             </li>
 
                             <li class="nav-item mx-1">
-                                <h5><a asp-controller="Account" asp-action="Register">LOGOUT<i class="fas fa-sign-out-alt ml-1"></i></a></h5>
+                                <h5><a class="nav-link" asp-controller="UserAccount" asp-action="SignUp">LOGOUT<i class="fas fa-sign-out-alt ml-1"></i></a></h5>
                             </li>
                         </ul>
                     </div>
@@ -48,21 +48,23 @@
     </header>
     @* Navigation End *@
 
-    @* Change Mobile Number Start *@
+    @* Change Password Start *@
     <div id="site-wrapper" class="d-flex flex-column justify-content-center container ">
 
-        <div id="breadbrumbs" class="d-flex justify-content-start container mt-5 mb-2 w-md-85 w-lg-90 w-xl-80"
+        <div id="breadbrumbs"
+             class="d-flex justify-content-start container mt-5 mb-2 w-md-85 w-lg-90 w-xl-80"
              aria-label="breadcrumbs">
-            <div class="btn-group container p-0" role="group">
+            <div class="btn-group container p-0"
+                 role="group">
                 <a asp-controller="UserDashboard" asp-action="UserHome">
-                    <button type="button" class="btn btn-sm btn-dark btn-arrow-right text-white-50">HOME</button>
+                    <button type="button" class="btn btn-sm btn-dark btn-arrow-right">HOME</button>
                 </a>
 
                 <a asp-controller="UserDashboard" asp-action="UserProfile">
-                    <button type="button" class="btn btn-sm btn-arrow-right btn-dark text-white">PROFILE DASH</button>
+                    <button type="button" class="btn btn-sm btn-arrow-right btn-dark">PROFILE DASH</button>
                 </a>
                 <a asp-controller="UserAccount" asp-action="UserChangeMobile">
-                    <button type="button" class="btn btn-sm btn-arrow-right btn-success text-white">CHANGE MOBILE</button>
+                    <button type="button" class="btn btn-sm btn-arrow-right btn-success">CHANGE MOBILE PHONE</button>
                 </a>
 
             </div>
@@ -76,8 +78,8 @@
                     <div class="mb-1 p-lg-5">
                         <img class="img-lg-50 img-fluid-15" src="/images/body.png" alt="">
                     </div>
-                    <div class="d-flex flex-column text-whitesmoke">
-                        <h2 class="text-white-50">Scholarship Monitoring System</h2>
+                    <div class="d-flex flex-column text-white-50">
+                        <h2>Scholarship Monitoring System</h2>
                     </div>
                 </div>
 
@@ -86,41 +88,48 @@
                 <div class="d-flex flex-column justify-content-center py-4 px-5 w-100">
 
                     <div class="my-2">
-                        <h4 class="mb-0 text-dark"><strong>CHANGE MOBILE NUMBER</strong></h4>
+                        <h4 class="mb-0"><strong>CHANGE MOBILE NUMBER</strong></h4>
                         <small class="text-info mt-0">
                             Logged in as
-                            <a class="text-info" href="/app/profile/2181">Mahmudul Hasan Hridoy</a>
+                            <a class="text-info" asp-controller="UserDashboard" asp-action="UserProfileDetails">@User.Identity.Name</a>
                         </small>
                     </div>
 
                     <form class="my-2" accept-charset="UTF-8" method="POST">
-                        <input type="hidden" name="csrfmiddlewaretoken"
-                               value="rpJJ0xZk0SmQnqgSCS0SgZ4GCdXVur4z35rYZa8u1fEJmvrd8xxeaZlwcQWujLiN">
 
-                        <div class="form-row">
+                        <div class="form-group col-lg-12">
+
+                            <h6 class="m-0"><label for="id_email">Old Mobile Number:</label></h6>
 
                             <div class="input-group">
-
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                        <i class="fas fa-mobile-alt"></i>
-                                    </span>
+                                    <span class="input-group-text pl-2 pr-2"><i class="fas fa-mobile"></i></span>
                                 </div>
 
-                                <input type="text" name="phone_mobile" value="01872944289" maxlength="12" placeholder=""
-                                       class="form-control form-control-sm" pattern="[\d]{10,12}" required
-                                       id="id_phone_mobile">
-
+                                <input asp-for="OldMobilePhone" maxlength="254" class="form-control form-control-sm"
+                                       type="text">
                             </div>
+                            <span asp-validation-for="OldMobilePhone" class="text-danger"></span><br />
 
-                            <small id="phone_mobile_error" class="text-secondary">Format (ex: 0123456789)</small>
+                        </div>
+
+                        <div class="form-group col-lg-12">
+
+                            <h6 class="m-0"><label for="id_email">New Mobile Number:</label></h6>
+
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text pl-2 pr-2"><i class="fas fa-mobile"></i></span>
+                                </div>
+
+                                <input asp-for="NewMobilePhone" maxlength="254" class="form-control form-control-sm"
+                                       id="id_email" type="text">
+                            </div>
+                            <span asp-validation-for="NewMobilePhone" class="text-danger"></span><br />
 
                         </div>
 
                         <div class="d-flex justify-content-end mt-2">
-                            <button id='loader' type="button" class="btn btn-sm btn-green" hidden>
-                                CHANGING<i class="fa fa-spinner fa-spin ml-2"></i>
-                            </button>
                             <button id="submit" type="submit" class="btn btn-sm btn-green">
                                 <i class="fas fa-save mr-2"></i>CHANGE
                             </button>
@@ -129,11 +138,11 @@
 
                 </div>
 
-
             </div>
         </div>
 
-
     </div>
+
+    @* Change Password End *@
 </div>
-@* Change Mobile Number End *@
+

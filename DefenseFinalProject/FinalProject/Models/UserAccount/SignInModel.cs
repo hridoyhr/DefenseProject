@@ -8,6 +8,7 @@ namespace FinalProject.Models.UserAccount.Scholarship
 {
     public class SignInModel
     {
+        [Key]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Enter Email Address")]
@@ -19,5 +20,9 @@ namespace FinalProject.Models.UserAccount.Scholarship
         [Display(Name = "Password")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
+        [Display(Name = "Remember me")]
+        public bool RememberMe { get; set; }
+
     }
 }
