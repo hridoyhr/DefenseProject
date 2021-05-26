@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 
 namespace FinalProject.Models.UserAccount.Account
 {
-    public class UserMobileChangeModel
+    public class UserMobileChangeModel 
     {
+        public int Id { get; set; }
     }
 }
