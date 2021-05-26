@@ -13,7 +13,7 @@
 
                 <div class="d-flex justify-content-start mx-2">
                     <a class="navbar-brand navbar-text" href="/">
-                        <img src="/images/body.png" height="30" width="auto" class="visible-lg-inline-block mr-1" alt="">
+                        <img src="/images/body.png" height="30" class="visible-lg-inline-block mr-1" alt="">
                         <span style="vertical-align: middle">Scholarship Monitoring System</span>
                     </a>
                 </div>
@@ -31,8 +31,8 @@
                             <li class="nav-item mr-3">
                                 <h5>
                                     <a class="nav-link text-success" asp-controller="UserDashboard" asp-action="UserProfileDetails">
-                                        <i class="fas fa-user mr-1"></i>Mahmudul
-                                        Hasan Hridoy
+                                        <i class="fas fa-user mr-1"></i>
+                                        @User.Identity.Name
                                     </a>
                                 </h5>
                             </li>
@@ -78,7 +78,7 @@
                         </div>
                         <div class="d-flex flex-column pt-1 pl-2 pr-2 pb-2 w-100">
                             <h3 class="text-white-50">
-                                Mahmudul Hasan Hridoy
+                                @User.Identity.Name
                             </h3>
                             <table class="table table-sm table-hover table-borderless header-table table-css">
                                 <tbody>
@@ -86,7 +86,7 @@
                                     <tr>
                                         <td class="text-darkgray">Email Address:</td>
                                         <td>
-                                            mahmudul35-205@diu.edu.bd
+                                            @User.Identity.Name
                                         </td>
                                     </tr>
 

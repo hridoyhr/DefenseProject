@@ -22,7 +22,7 @@ namespace FinalProject.Controllers
             this.userManager = userManager;
             this.signInManager = signInManager;
         }
-
+        //User Sign Up
         [HttpGet]
         public IActionResult SignUp()
         {
@@ -37,8 +37,9 @@ namespace FinalProject.Controllers
                 // Copy data from RegisterViewModel to IdentityUser
                 var user = new IdentityUser
                 {
-                    UserName = model.EmailAddress,
-                    Email = model.EmailAddress
+                    UserName = model.FullName,
+                    Email = model.EmailAddress,
+                    PhoneNumber = model.MobilePhone
                 };
 
                 // Store user data in AspNetUsers database table
@@ -62,11 +63,37 @@ namespace FinalProject.Controllers
 
             return View(model);
         }
-
+        //User Logout
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await signInManager.SignOutAsync();
+            return RedirectToAction("SignUp", "UserAccount");
+        }
+        //User Sign In
         [HttpGet]
         public IActionResult SignIn()
         {
             return View();
+        }
+        
+        [HttpPost]
+        public async Task<IActionResult> SignIn(SignInModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await signInManager.PasswordSignInAsync(
+                    model.EmailAddress, model.Password,model.RememberMe, false);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("UserHome", "UserDashboard");
+                }
+
+                ModelState.AddModelError(string.Empty, "Invalid Login Attempt");
+            }
+
+            return View(model);
         }
 
         [HttpGet]
@@ -88,9 +115,38 @@ namespace FinalProject.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> UserChangeMobile(SignUpModel student)
+        public async Task<IActionResult> UserChangeMobile(UserMobileChangeModel student)
         {
-            
+
+            if (ModelState.IsValid)
+            {
+                var user = await userManager.GetUserAsync(User);
+                if (user == null)
+                {
+                    return RedirectToAction("UserProfile");
+                }
+
+                // ChangePasswordAsync changes the user password
+                var result = await userManager.ChangePhoneNumberAsync(user,
+                    student.OldMobilePhone, student.NewMobilePhone);
+
+                // The new password did not meet the complexity rules or
+                // the current password is incorrect. Add these errors to
+                // the ModelState and rerender ChangePassword view
+                if (!result.Succeeded)
+                {
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
+                    return View();
+                }
+
+                // Upon successfully changing the password refresh sign-in cookie
+                await signInManager.RefreshSignInAsync(user);
+                return View("ChangeMobileNumberConfirmation");
+            }
+
             return View(student);
         }
 
@@ -108,7 +164,7 @@ namespace FinalProject.Controllers
                 var user = await userManager.GetUserAsync(User);
                 if (user == null)
                 {
-                    return RedirectToAction("Login");
+                    return RedirectToAction("UserProfile", "UserDashboard");
                 }
 
                 // ChangePasswordAsync changes the user password
@@ -129,7 +185,7 @@ namespace FinalProject.Controllers
 
                 // Upon successfully changing the password refresh sign-in cookie
                 await signInManager.RefreshSignInAsync(user);
-                return View("ChangePasswordConfirmation");
+                return View("~/Views/UserDashboard/UserProfile.cshtml");
             }
 
             return View(model);

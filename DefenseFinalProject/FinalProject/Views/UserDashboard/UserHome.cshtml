@@ -32,7 +32,7 @@
                                 <h5>
                                     <a class="nav-link text-success">
                                         <i class="fas fa-user mr-1"></i>
-                                        @User.Identity.Name!
+                                        @User.Identity.Name
                                     </a>
                                 </h5>
                             </li>
@@ -70,7 +70,7 @@
 
                     <small class="text-info mt-0">
                         Logged in as
-                        <a class="text-info" asp-controller="Profile" asp-action="ProfileDetails">Mahmudul Hasan Hridoy</a>
+                        <a class="text-info" asp-controller="Profile" asp-action="ProfileDetails">@User.Identity.Name</a>
                     </small>
                 </div>
 
