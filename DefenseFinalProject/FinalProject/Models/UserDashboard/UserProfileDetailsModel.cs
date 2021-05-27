@@ -7,5 +7,6 @@ namespace FinalProject.Models.UserDashboard
 {
     public class UserProfileDetailsModel
     {
+        public int MyProperty { get; set; }
     }
 }
