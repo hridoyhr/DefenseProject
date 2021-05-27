@@ -41,7 +41,7 @@ namespace FinalProject
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+            services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             //Configuration Services method
@@ -50,8 +50,7 @@ namespace FinalProject
                 options.Cookie.HttpOnly = true;
                 options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
 
-                options.LoginPath = "/Account/Signin";
-                options.AccessDeniedPath = "/Account/AccessDenied";
+                options.LoginPath = "/UserAccount/SignIn";
                 options.SlidingExpiration = true;
             });
 
@@ -102,7 +101,7 @@ namespace FinalProject
 
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=UserAccount}/{action=SignUp}/{id?}");
+                    pattern: "{controller=UserAccount}/{action=SignIn}/{id?}");
                 endpoints.MapRazorPages();
             });
         }

@@ -21,7 +21,7 @@
         <nav class="navbar navbar-expand-xl navbar-dark bg-dark fixed-top py-0 mb-5">
             <div class="d-flex justify-content-between mx-2 w-100">
                 <div class="d-flex justify-content-start mx-2">
-                    <a class="navbar-brand navbar-text" asp-controller="UserAccount" asp-action="SignUp">
+                    <a class="navbar-brand navbar-text" href="/">
 
                         <img src="/images/body.png" height="30" class="visible-lg-inline-block mr-1" alt="">
 
@@ -31,29 +31,14 @@
 
                 <div class="d-flex justify-content-end mx-2">
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav nav-fill">
-                            <li class="nav-item mx-1">
-                                <h5><a class="nav-link" asp-controller="AdminAccount" asp-action="AdminLogin">ADMIN<i class="fas fa-user-alt ml-1"></i></a></h5>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav">
-                            <li class="nav-item mx-1">
-                                <h5><a class="nav-link" asp-controller="UserAccount" asp-action="SignUp">STUDENT<i class="fas fa-book-reader ml-1"></i></a></h5>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav">
-                            <li class="nav-item mx-1">
-                                <h5><a class="nav-link" asp-controller="UserAccount" asp-action="SignIn">LOGIN<i class="fas fa-sign-in-alt ml-1"></i></a></h5>
-                            </li>
-                        </ul>
-                    </div>
+                    <partial name="_LoginPartial" />
+                    @*<div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item mx-1">
+                    <h5><a class="nav-link" asp-controller="UserAccount" asp-action="SignIn">LOGIN<i class="fas fa-sign-in-alt ml-1"></i></a></h5>
+                </li>
+            </ul>
+        </div>*@
 
                 </div>
 
