@@ -1,0 +1,90 @@
+﻿@model StudentDetails
+
+<div class="border-content ">
+    <div class="d-flex flex-column header-details">
+        <div class="d-flex">
+            <div class="d-flex pt-1 pl-2 pr-2 pb-2">
+                <img class="img-thumbnail float-lg-left header-image p-0"
+                     src="/images/man.png" alt="">
+            </div>
+            <div class="d-flex flex-column pt-1 pl-2 pr-2 pb-2 w-100">
+                <h3 class="text-white-50">
+                    @Model.Name
+                </h3>
+                <table class="table table-sm table-hover table-borderless header-table table-css">
+                    <tbody>
+
+                        <tr>
+                            <td class="text-darkgray">Email Address:</td>
+                            <td>
+                                @Model.Email
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-darkgray">Profile Type:</td>
+                            <td>Applicant</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="strip-gh"></div>
+    </div>
+
+    <div class="d-flex flex-column pt-4 pl-4 pr-4">
+        <div class="d-flex justify-content-between">
+            <h4 class="text-greenpigment font-weight-bold">
+                <i class="fas fa-user-shield mr-2"></i>Personal
+                Details
+            </h4>
+
+        </div>
+        <table class="table table-sm table-hover border table-css">
+            <tbody>
+
+                <tr>
+                    <td>Mobile Phone #:</td>
+                    <th>
+                        @Model.PhoneNumber <a asp-controller="UserAccount" asp-action="UserChangeMobile">
+                            <i class="fas fa-edit ml-2 mr-1"></i>Change
+                        </a>
+                    </th>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="d-flex flex-column pt-4 pl-4 pr-4">
+        <div class="d-flex justify-content-between">
+
+            <h4 class="text-greenpigment font-weight-bold">
+                <i class="fas fa-user-secret mr-2"></i>Scholarship Fund Details
+            </h4>
+
+        </div>
+        <table class="table table-sm table-hover border table-css">
+            <thead>
+                <tr>
+                    <td>Total Amount</td>
+                    <th>20000 tk</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.FundDetails)
+                {
+                    <tr>
+                        <td>@item.Category</td>
+                        <td>@item.Money</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="strip-gh mt-4"></div>
+    <div class="strip-dh"></div>
+
+</div>

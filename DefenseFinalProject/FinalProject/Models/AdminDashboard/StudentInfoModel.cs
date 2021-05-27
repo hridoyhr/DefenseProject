@@ -1,4 +1,5 @@
 ﻿using FinalProject.Models.UserAccount.Scholarship;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -7,15 +8,21 @@ using System.Threading.Tasks;
 
 namespace FinalProject.Web.Models.AdminDashboard
 {
-    public class StudentInfoModel : SignUpModel
+    public class StudentInfoModel
     {
-        [Display(Name ="Full Name")]
-        public string FullName { get; set; }
+        public List<IdentityUser> UserInfo { get; set; }
+    }
 
-        [Display(Name ="Email Address")]
-        public string EmailAddress { get; set; }
-
-        [Display(Name ="Phone Number")]
+    public class StudentDetails
+    {
+        public string Name { get; set; }
+        public string Email { get; set; }
         public string PhoneNumber { get; set; }
+        public List<ExpenseDetails> FundDetails { get; set; }
+    }
+    public class ExpenseDetails
+    {
+        public string Category { get; set; }
+        public double Money { get; set; }
     }
 }

@@ -461,3 +461,5 @@ G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProj
 G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\AdminDashboard\StudentAccount.cshtml.g.cs
 G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\AdminDashboard\StudentInfo.cshtml.g.cs
 G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\AdminDashboard\Transaction.cshtml.g.cs
+G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\UserDashboard\_UserDetails.cshtml.g.cs
+G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\AdminDashboard\StudentDetails.cshtml.g.cs
