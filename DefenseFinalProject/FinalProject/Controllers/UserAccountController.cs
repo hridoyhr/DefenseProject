@@ -37,7 +37,7 @@ namespace FinalProject.Controllers
                 // Copy data from RegisterViewModel to IdentityUser
                 var user = new IdentityUser
                 {
-                    UserName = model.FullName,
+                    UserName = model.EmailAddress,
                     Email = model.EmailAddress,
                     PhoneNumber = model.MobilePhone
                 };
@@ -50,7 +50,7 @@ namespace FinalProject.Controllers
                 if (result.Succeeded)
                 {
                     await signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("SignIn", "UserAccount");
+                    return RedirectToAction(nameof(SignIn));
                 }
 
                 // If there are any errors, add them to the ModelState object
@@ -68,8 +68,9 @@ namespace FinalProject.Controllers
         public async Task<IActionResult> Logout()
         {
             await signInManager.SignOutAsync();
-            return RedirectToAction("SignUp", "UserAccount");
+            return RedirectToAction(nameof(SignIn));
         }
+
         //User Sign In
         [HttpGet]
         public IActionResult SignIn()
@@ -82,8 +83,7 @@ namespace FinalProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await signInManager.PasswordSignInAsync(
-                    model.EmailAddress, model.Password,model.RememberMe, false);
+                var result = await signInManager.PasswordSignInAsync(model.EmailAddress, model.Password, false, false);
 
                 if (result.Succeeded)
                 {
@@ -108,6 +108,7 @@ namespace FinalProject.Controllers
             return View();
         }
 
+        //User Change Mobile
         [HttpGet]
         public IActionResult UserChangeMobile()
         {
@@ -123,16 +124,13 @@ namespace FinalProject.Controllers
                 var user = await userManager.GetUserAsync(User);
                 if (user == null)
                 {
-                    return RedirectToAction("UserProfile");
+                    return RedirectToAction("UserProfile", "UserDashboard");
                 }
 
                 // ChangePasswordAsync changes the user password
                 var result = await userManager.ChangePhoneNumberAsync(user,
                     student.OldMobilePhone, student.NewMobilePhone);
 
-                // The new password did not meet the complexity rules or
-                // the current password is incorrect. Add these errors to
-                // the ModelState and rerender ChangePassword view
                 if (!result.Succeeded)
                 {
                     foreach (var error in result.Errors)
@@ -144,12 +142,13 @@ namespace FinalProject.Controllers
 
                 // Upon successfully changing the password refresh sign-in cookie
                 await signInManager.RefreshSignInAsync(user);
-                return View("ChangeMobileNumberConfirmation");
+                return View("~/Views/UserDashboard/UserProfile.cshtml");
             }
 
             return View(student);
         }
 
+        //User Change Password
         [HttpGet]
         public IActionResult UserPasswordChange()
         {

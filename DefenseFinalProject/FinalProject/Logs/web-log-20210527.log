@@ -88,3 +88,119 @@ System.InvalidOperationException: The view 'UserProfile' was not found. The foll
 2021-05-27 00:09:39.333 +06:00 [WRN] Change password failed for user.
 2021-05-27 00:12:26.693 +06:00 [INF] Application Starting up
 2021-05-27 00:12:28.658 +06:00 [WRN] Change password failed for user.
+2021-05-27 00:25:49.847 +06:00 [INF] Application Starting up
+2021-05-27 00:26:41.578 +06:00 [WRN] VerifyUserTokenAsync() failed with purpose: ChangePhoneNumber:01872944289 for user.
+2021-05-27 00:26:41.581 +06:00 [WRN] Change phone number for user failed with invalid token.
+2021-05-27 00:26:42.476 +06:00 [WRN] VerifyUserTokenAsync() failed with purpose: ChangePhoneNumber:01872944289 for user.
+2021-05-27 00:26:42.476 +06:00 [WRN] Change phone number for user failed with invalid token.
+2021-05-27 00:26:43.150 +06:00 [WRN] VerifyUserTokenAsync() failed with purpose: ChangePhoneNumber:01872944289 for user.
+2021-05-27 00:26:43.150 +06:00 [WRN] Change phone number for user failed with invalid token.
+2021-05-27 00:26:43.751 +06:00 [WRN] VerifyUserTokenAsync() failed with purpose: ChangePhoneNumber:01872944289 for user.
+2021-05-27 00:26:43.751 +06:00 [WRN] Change phone number for user failed with invalid token.
+2021-05-27 00:26:44.339 +06:00 [WRN] VerifyUserTokenAsync() failed with purpose: ChangePhoneNumber:01872944289 for user.
+2021-05-27 00:26:44.339 +06:00 [WRN] Change phone number for user failed with invalid token.
+2021-05-27 00:26:44.713 +06:00 [WRN] VerifyUserTokenAsync() failed with purpose: ChangePhoneNumber:01872944289 for user.
+2021-05-27 00:26:44.713 +06:00 [WRN] Change phone number for user failed with invalid token.
+2021-05-27 00:26:44.931 +06:00 [WRN] VerifyUserTokenAsync() failed with purpose: ChangePhoneNumber:01872944289 for user.
+2021-05-27 00:26:44.931 +06:00 [WRN] Change phone number for user failed with invalid token.
+2021-05-27 00:26:45.103 +06:00 [WRN] VerifyUserTokenAsync() failed with purpose: ChangePhoneNumber:01872944289 for user.
+2021-05-27 00:26:45.103 +06:00 [WRN] Change phone number for user failed with invalid token.
+2021-05-27 00:26:45.519 +06:00 [WRN] VerifyUserTokenAsync() failed with purpose: ChangePhoneNumber:01872944289 for user.
+2021-05-27 00:26:45.519 +06:00 [WRN] Change phone number for user failed with invalid token.
+2021-05-27 00:26:45.881 +06:00 [WRN] VerifyUserTokenAsync() failed with purpose: ChangePhoneNumber:01872944289 for user.
+2021-05-27 00:26:45.881 +06:00 [WRN] Change phone number for user failed with invalid token.
+2021-05-27 00:26:46.085 +06:00 [WRN] VerifyUserTokenAsync() failed with purpose: ChangePhoneNumber:01872944289 for user.
+2021-05-27 00:26:46.085 +06:00 [WRN] Change phone number for user failed with invalid token.
+2021-05-27 00:26:46.565 +06:00 [WRN] VerifyUserTokenAsync() failed with purpose: ChangePhoneNumber:01872944289 for user.
+2021-05-27 00:26:46.565 +06:00 [WRN] Change phone number for user failed with invalid token.
+2021-05-27 00:26:47.035 +06:00 [WRN] VerifyUserTokenAsync() failed with purpose: ChangePhoneNumber:01872944289 for user.
+2021-05-27 00:26:47.035 +06:00 [WRN] Change phone number for user failed with invalid token.
+2021-05-27 11:02:26.948 +06:00 [INF] Application Starting up
+2021-05-27 16:14:03.691 +06:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AspNetCore.Views_AdminDashboard_StudentInfo.ExecuteAsync() in G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\Views\AdminDashboard\StudentInfo.cshtml:line 187
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-05-27 18:45:00.220 +06:00 [INF] Application Starting up
+2021-05-27 18:46:00.202 +06:00 [WRN] Invalid password for user.
+2021-05-27 18:46:00.205 +06:00 [WRN] User failed to provide the correct password.
+2021-05-27 19:29:02.252 +06:00 [INF] Application Starting up
+2021-05-27 19:38:00.222 +06:00 [INF] Application Starting up
+2021-05-27 19:43:41.013 +06:00 [INF] Application Starting up
+2021-05-27 19:47:05.514 +06:00 [INF] Application Starting up
+2021-05-27 19:49:26.359 +06:00 [INF] Application Starting up
+2021-05-27 19:50:00.246 +06:00 [INF] Application Starting up
+2021-05-27 19:50:33.819 +06:00 [WRN] User password validation failed: PasswordRequiresUpper.
+2021-05-27 19:50:54.389 +06:00 [WRN] User password validation failed: PasswordRequiresUpper.
+2021-05-27 19:51:22.403 +06:00 [INF] Application Starting up
+2021-05-27 19:51:49.971 +06:00 [INF] Application Starting up
+2021-05-27 19:53:53.662 +06:00 [INF] Application Starting up
+2021-05-27 19:54:11.005 +06:00 [WRN] Invalid password for user.
+2021-05-27 19:54:11.008 +06:00 [WRN] User failed to provide the correct password.
+2021-05-27 19:54:35.316 +06:00 [INF] Application Starting up
+2021-05-27 19:55:13.798 +06:00 [INF] Application Starting up
+2021-05-27 19:56:00.088 +06:00 [WRN] Invalid password for user.
+2021-05-27 19:56:00.091 +06:00 [WRN] User failed to provide the correct password.
+2021-05-27 19:56:03.335 +06:00 [WRN] Invalid password for user.
+2021-05-27 19:56:03.335 +06:00 [WRN] User failed to provide the correct password.
+2021-05-27 19:56:04.937 +06:00 [WRN] Invalid password for user.
+2021-05-27 19:56:04.937 +06:00 [WRN] User failed to provide the correct password.
+2021-05-27 19:56:34.261 +06:00 [WRN] Invalid password for user.
+2021-05-27 19:56:34.261 +06:00 [WRN] User failed to provide the correct password.
+2021-05-27 19:56:53.810 +06:00 [INF] Application Starting up
+2021-05-27 19:57:09.616 +06:00 [WRN] Invalid password for user.
+2021-05-27 19:57:09.619 +06:00 [WRN] User failed to provide the correct password.
+2021-05-27 20:00:36.223 +06:00 [INF] Application Starting up
+2021-05-27 20:00:42.304 +06:00 [WRN] Invalid password for user.
+2021-05-27 20:00:42.307 +06:00 [WRN] User failed to provide the correct password.
+2021-05-27 20:00:48.232 +06:00 [INF] Application Starting up
+2021-05-27 20:01:01.065 +06:00 [WRN] Invalid password for user.
+2021-05-27 20:01:01.069 +06:00 [WRN] User failed to provide the correct password.
+2021-05-27 20:02:55.299 +06:00 [INF] Application Starting up
+2021-05-27 20:02:58.461 +06:00 [WRN] Invalid password for user.
+2021-05-27 20:02:58.464 +06:00 [WRN] User failed to provide the correct password.
+2021-05-27 20:04:04.410 +06:00 [INF] Application Starting up
+2021-05-27 20:04:06.133 +06:00 [WRN] Invalid password for user.
+2021-05-27 20:04:06.136 +06:00 [WRN] User failed to provide the correct password.
+2021-05-27 20:04:12.617 +06:00 [WRN] Invalid password for user.
+2021-05-27 20:04:12.617 +06:00 [WRN] User failed to provide the correct password.
+2021-05-27 20:04:19.249 +06:00 [INF] Application Starting up
+2021-05-27 20:04:35.201 +06:00 [WRN] Invalid password for user.
+2021-05-27 20:04:35.204 +06:00 [WRN] User failed to provide the correct password.
+2021-05-27 20:05:57.320 +06:00 [INF] Application Starting up
+2021-05-27 20:06:00.682 +06:00 [WRN] Invalid password for user.
+2021-05-27 20:06:00.685 +06:00 [WRN] User failed to provide the correct password.
+2021-05-27 20:06:23.386 +06:00 [INF] Application Starting up
+2021-05-27 20:06:40.149 +06:00 [WRN] Invalid password for user.
+2021-05-27 20:06:40.153 +06:00 [WRN] User failed to provide the correct password.
+2021-05-27 20:07:36.073 +06:00 [INF] Application Starting up
+2021-05-27 20:07:49.775 +06:00 [WRN] Invalid password for user.
+2021-05-27 20:07:49.779 +06:00 [WRN] User failed to provide the correct password.
+2021-05-27 20:07:50.486 +06:00 [WRN] Invalid password for user.
+2021-05-27 20:07:50.486 +06:00 [WRN] User failed to provide the correct password.
+2021-05-27 20:12:14.917 +06:00 [INF] Application Starting up
+2021-05-27 20:12:29.786 +06:00 [INF] Application Starting up

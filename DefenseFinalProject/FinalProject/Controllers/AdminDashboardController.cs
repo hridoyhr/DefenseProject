@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FinalProject.Data;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +10,15 @@ namespace FinalProject.Web.Controllers
 {
     public class AdminDashboardController : Controller
     {
+        private readonly UserManager<IdentityUser> userManager;
+        private readonly SignInManager<IdentityUser> signInManager;
+
+        public AdminDashboardController(UserManager<IdentityUser> userManager,
+            SignInManager<IdentityUser> signInManager)
+        {
+            this.userManager = userManager;
+            this.signInManager = signInManager;
+        }
         [HttpGet]
         public IActionResult AdminHome()
         {
@@ -15,7 +26,7 @@ namespace FinalProject.Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult StudentInfo()
+        public async Task<IActionResult> StudentInfo()
         {
             return View();
         }

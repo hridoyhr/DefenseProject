@@ -102,7 +102,7 @@ namespace FinalProject
 
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=UserAccount}/{action=SignUp}/{id?}");
+                    pattern: "{controller=UserAccount}/{action=SignIn}/{id?}");
                 endpoints.MapRazorPages();
             });
         }
