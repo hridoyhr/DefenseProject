@@ -75,10 +75,10 @@ namespace FinalProject.Controllers
         [HttpGet]
         public async Task<IActionResult> SignIn()
         {
-            //if (signInManager.IsSignedIn(User))
-            //{
-            //    RedirectToAction("UserHome", "UserDashboard");
-            //}
+            if (signInManager.IsSignedIn(User))
+            {
+                return RedirectToAction("UserHome", "UserDashboard");
+            }
             return View();
         }
         
@@ -91,6 +91,10 @@ namespace FinalProject.Controllers
 
                 if (result.Succeeded)
                 {
+                    if(model.EmailAddress == "admin@gmail.com" && model.Password == "Admin@123")
+                    {
+                        return RedirectToAction("AdminHome", "AdminDashboard");
+                    }
                     return RedirectToAction("UserHome", "UserDashboard");
                 }
 

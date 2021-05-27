@@ -374,3 +374,10 @@ System.InvalidOperationException: The model item passed into the ViewDataDiction
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
 2021-05-27 20:41:38.037 +06:00 [INF] Application Starting up
 2021-05-27 20:43:04.696 +06:00 [INF] Application Starting up
+2021-05-27 20:44:50.800 +06:00 [WRN] Invalid password for user.
+2021-05-27 20:44:50.805 +06:00 [WRN] User failed to provide the correct password.
+2021-05-27 20:48:35.405 +06:00 [INF] Application Starting up
+2021-05-27 20:48:39.955 +06:00 [INF] Application Starting up
+2021-05-27 20:48:50.017 +06:00 [INF] Application Starting up
+2021-05-27 20:53:18.029 +06:00 [INF] Application Starting up
+2021-05-27 20:54:08.303 +06:00 [INF] Application Starting up
