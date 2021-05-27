@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalProject.Web.Models.AdminDashboard;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -17,5 +18,6 @@ namespace FinalProject.Models.UserAccount.Account
         [DataType(DataType.Password)]
         [Display(Name = "New Password")]
         public string NewMobilePhone { get; set; }
+        public List<ExpenseDetails> expenseDetails { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using FinalProject.Data;
+using FinalProject.Models.UserDashboard;
 using FinalProject.Web.Models.AdminDashboard;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -67,6 +68,36 @@ namespace FinalProject.Web.Controllers
         public IActionResult Transaction()
         {
             return View();
+        }
+
+        public IActionResult BuildScholarship(int quantity)
+        {
+            var model = new ScholarshipModel(quantity);
+
+            return PartialView(model.fundDetails);
+        }
+
+        public IActionResult Scholarship()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Scholarship(List<ExpenseDetails> model)
+        {
+            if (ModelState.IsValid)
+            {
+                foreach (var item in model)
+                {
+                    applicationDbContext.Scholarships.Add(new Data.Scholarship 
+                    {
+                        TypeOfScholarship = item.Category,
+                        Money = item.Money
+                    });
+                }
+                applicationDbContext.SaveChanges();
+            }
+            return RedirectToAction(nameof(StudentInfo));
         }
     }
 }

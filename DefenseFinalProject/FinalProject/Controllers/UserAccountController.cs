@@ -5,6 +5,7 @@ using FinalProject.Models.UserAccount.Scholarship;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,12 +18,14 @@ namespace FinalProject.Controllers
     {
         private readonly UserManager<IdentityUser> userManager;
         private readonly SignInManager<IdentityUser> signInManager;
+        private readonly ApplicationDbContext applicationDbContext;
 
         public UserAccountController(UserManager<IdentityUser> userManager,
-            SignInManager<IdentityUser> signInManager)
+            SignInManager<IdentityUser> signInManager, ApplicationDbContext applicationDbContext)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
+            this.applicationDbContext = applicationDbContext;
         }
         //User Sign Up
         [AllowAnonymous]
@@ -116,16 +119,36 @@ namespace FinalProject.Controllers
         }
 
         [HttpGet]
-        public IActionResult Payment()
+        public IActionResult Payment(int id)
         {
-            return View();
+            var model = new PaymentModel();
+            model.CategoryId = id;
+            var scholarship = applicationDbContext.Scholarships.FirstOrDefault(x => x.Id == model.CategoryId);
+            model.categoryName = scholarship.TypeOfScholarship;
+            return View(model);
+        }
+        
+        [HttpPost]
+        public IActionResult Payment(PaymentModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var details = JsonConvert.SerializeObject(model);
+                applicationDbContext.Payments.Add(new Data.Payment() { Details = details });
+                var scholarship = applicationDbContext.Scholarships.FirstOrDefault(x => x.Id == model.CategoryId);
+                scholarship.Money -= model.money;
+                applicationDbContext.SaveChanges();
+            }
+            return RedirectToAction(nameof(ScholarshipAccount));
         }
 
         [HttpGet]
         public async Task<IActionResult> ScholarshipAccount()
         {
             var user = await userManager.GetUserAsync(HttpContext.User);
-            var model = new UserMobileChangeModel() { OldMobilePhone = user.PhoneNumber };
+            var scholarship = applicationDbContext.Scholarships.ToList();
+            var model = new UserMobileChangeModel() { OldMobilePhone = user.PhoneNumber, expenseDetails = scholarship.Select(x => 
+            new Web.Models.AdminDashboard.ExpenseDetails {Id = x.Id, Category = x.TypeOfScholarship, Money = x.Money }).ToList()};
             return View(model);
         }
 

@@ -96,63 +96,26 @@
                         <td>Total Amount</td>
                         <th>
                         <th>20000 tk</th>
-                        </th>
                     </tr>
                 </table>
 
                 <table class="table table-sm table-hover border table-css">
-                    <thead></thead>
-
+                    <thead>
+                        <tr>
+                            <th>Fund Type</th>
+                            <th>Fund Money</th>
+                        </tr>
+                    </thead>
                     <tbody>
-
-                        <tr>
-                            <td>Educational Purpose</td>
-                            <th>
-                                10000 tk
-                                <a asp-controller="UserAccount" asp-action="Payment">
-                                    <button id="submit" type="submit" class="btn btn-sm btn-dark text-white-50" style="font-size: 15px; margin-left: 60%; font-weight: bold">
-                                        Payment
-                                    </button>
-                                </a>
-                            </th>
-
-                        </tr>
-                        <tr>
-                            <td>Health Purpose</td>
-                            <th>
-                                4000 tk
-                                <a asp-controller="UserAccount" asp-action="Payment">
-                                    <button id="submit" type="submit" class="btn btn-sm btn-dark text-white-50" style="font-size: 15px; margin-left: 62%; font-weight: bold">
-                                        Payment
-                                    </button>
-                                </a>
-                            </th>
-                        </tr>
-
-                        <tr>
-                            <td>Food's</td>
-                            <th>
-                                3000 tk
-                                <a asp-controller="UserAccount" asp-action="Payment">
-                                    <button id="submit" type="submit" class="btn btn-sm btn-dark text-white-50" style="font-size: 15px; margin-left: 62%; font-weight: bold">
-                                        Payment
-                                    </button>
-                                </a>
-                            </th>
-                        </tr>
-
-                        <tr>
-                            <td>Other's</td>
-                            <th>
-                                3000 tk
-                                <a asp-controller="UserAccount" asp-action="Payment">
-                                    <button id="submit" type="submit" class="btn btn-sm btn-dark text-white-50" style="font-size: 15px; margin-left: 62%; font-weight: bold">
-                                        Payment
-                                    </button>
-                                </a>
-                            </th>
-                        </tr>
-                </table>
+                        @foreach (var item in Model.expenseDetails)
+                        {
+                            <tr>
+                                <td>@item.Category</td>
+                                <td>@item.Money</td>
+                                <td><a class="btn btn-secondary" asp-action="Payment" asp-controller="UserAccount" asp-route-id="@item.Id">Payment</a></td>
+                            </tr>
+                        }
+</table>
             </div>
 
             <div class="strip-gh mt-4"></div>

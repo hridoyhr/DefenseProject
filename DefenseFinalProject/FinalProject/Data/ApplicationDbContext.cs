@@ -13,7 +13,19 @@ namespace FinalProject.Data
             : base(options)
         {
         }
+        public DbSet<Scholarship> Scholarships { get; set; }
+        public DbSet<Payment> Payments { get; set; }
+    }
+    public class Scholarship
+    {
+        public int Id { get; set; }
+        public string TypeOfScholarship { get; set; }
+        public double Money { get; set; }
+    }
 
-        public DbSet<SignUpModel> StudentInfo { get; set; }
+    public class Payment
+    {
+        public int Id { get; set; }
+        public string Details { get; set; }
     }
 }

@@ -24,5 +24,6 @@ namespace FinalProject.Web.Models.AdminDashboard
     {
         public string Category { get; set; }
         public double Money { get; set; }
+        public int Id { get; set; }
     }
 }

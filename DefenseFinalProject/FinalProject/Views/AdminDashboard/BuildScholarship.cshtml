@@ -1,0 +1,19 @@
+﻿@model List<ExpenseDetails>
+
+<div>
+    @for (int i = 0; i < Model.Count(); i++)
+    {
+        <div class="form-group row">
+            <label class="text-lightgray">@(i+1)</label>
+            <div class="col">
+                <input asp-for="@Model[i].Category" placeholder="Category" class="form-control" />
+            </div>
+            <div class="col">
+                <input asp-for="@Model[i].Money" placeholder="Money" class="form-control" />
+            </div>
+        </div>
+    }
+    <div class="mt-2">
+        <input class="form-control" type="submit" value="Save" />
+    </div>
+</div>
