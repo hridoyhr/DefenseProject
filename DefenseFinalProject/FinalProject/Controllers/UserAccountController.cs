@@ -73,8 +73,12 @@ namespace FinalProject.Controllers
 
         //User Sign In
         [HttpGet]
-        public IActionResult SignIn()
+        public async Task<IActionResult> SignIn()
         {
+            //if (signInManager.IsSignedIn(User))
+            //{
+            //    RedirectToAction("UserHome", "UserDashboard");
+            //}
             return View();
         }
         
@@ -103,33 +107,32 @@ namespace FinalProject.Controllers
         }
 
         [HttpGet]
-        public IActionResult ScholarshipAccount()
+        public async Task<IActionResult> ScholarshipAccount()
         {
-            return View();
+            var user = await userManager.GetUserAsync(HttpContext.User);
+            var model = new UserMobileChangeModel() { OldMobilePhone = user.PhoneNumber };
+            return View(model);
         }
 
         //User Change Mobile
         [HttpGet]
-        public IActionResult UserChangeMobile()
+        public async Task<IActionResult> UserChangeMobile()
         {
-            return View();
+            var user = await userManager.GetUserAsync(HttpContext.User);
+            var model = new UserMobileChangeModel() { OldMobilePhone = user.PhoneNumber };
+            return View(model);
         }
 
         [HttpPost]
-        public async Task<IActionResult> UserChangeMobile(UserMobileChangeModel student)
+        public async Task<IActionResult> UserChangeMobile(UserMobileChangeModel model)
         {
 
             if (ModelState.IsValid)
             {
                 var user = await userManager.GetUserAsync(User);
-                if (user == null)
-                {
-                    return RedirectToAction("UserProfile", "UserDashboard");
-                }
 
                 // ChangePasswordAsync changes the user password
-                var result = await userManager.ChangePhoneNumberAsync(user,
-                    student.OldMobilePhone, student.NewMobilePhone);
+                var result = await userManager.SetPhoneNumberAsync(user, model.NewMobilePhone);
 
                 if (!result.Succeeded)
                 {
@@ -137,15 +140,13 @@ namespace FinalProject.Controllers
                     {
                         ModelState.AddModelError(string.Empty, error.Description);
                     }
-                    return View();
+                    return View(model);
                 }
 
-                // Upon successfully changing the password refresh sign-in cookie
-                await signInManager.RefreshSignInAsync(user);
-                return View("~/Views/UserDashboard/UserProfile.cshtml");
+                return RedirectToAction(nameof(ScholarshipAccount));
             }
 
-            return View(student);
+            return View(model);
         }
 
         //User Change Password
