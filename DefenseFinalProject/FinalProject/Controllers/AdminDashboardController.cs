@@ -1,4 +1,5 @@
 ﻿using FinalProject.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject.Web.Controllers
 {
+    [Authorize]
     public class AdminDashboardController : Controller
     {
         private readonly UserManager<IdentityUser> userManager;

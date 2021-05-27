@@ -50,8 +50,7 @@ namespace FinalProject
                 options.Cookie.HttpOnly = true;
                 options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
 
-                options.LoginPath = "/Account/Signin";
-                options.AccessDeniedPath = "/Account/AccessDenied";
+                options.LoginPath = "/UserAccount/SignIn";
                 options.SlidingExpiration = true;
             });
 

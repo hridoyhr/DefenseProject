@@ -2,6 +2,7 @@
 using FinalProject.Data.Migrations;
 using FinalProject.Models.UserAccount.Account;
 using FinalProject.Models.UserAccount.Scholarship;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject.Controllers
 {
+    [Authorize]
     public class UserAccountController : Controller
     {
         private readonly UserManager<IdentityUser> userManager;
@@ -23,12 +25,18 @@ namespace FinalProject.Controllers
             this.signInManager = signInManager;
         }
         //User Sign Up
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult SignUp()
         {
+            if (signInManager.IsSignedIn(User))
+            {
+                return RedirectToAction("UserHome", "UserDashboard");
+            }
             return View();
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> SignUp(SignUpModel model)
         {
@@ -63,6 +71,7 @@ namespace FinalProject.Controllers
 
             return View(model);
         }
+
         //User Logout
         [HttpPost]
         public async Task<IActionResult> Logout()
@@ -71,6 +80,7 @@ namespace FinalProject.Controllers
             return RedirectToAction(nameof(SignIn));
         }
 
+        [AllowAnonymous]
         //User Sign In
         [HttpGet]
         public async Task<IActionResult> SignIn()
@@ -81,7 +91,8 @@ namespace FinalProject.Controllers
             }
             return View();
         }
-        
+
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> SignIn(SignInModel model)
         {
