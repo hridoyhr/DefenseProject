@@ -14,12 +14,12 @@ namespace FinalProject.Web.Controllers
     [Authorize]
     public class AdminDashboardController : Controller
     {
-        private readonly UserManager<IdentityUser> userManager;
-        private readonly SignInManager<IdentityUser> signInManager;
+        private readonly UserManager<AppUser> userManager;
+        private readonly SignInManager<AppUser> signInManager;
         private readonly ApplicationDbContext applicationDbContext;
 
-        public AdminDashboardController(UserManager<IdentityUser> userManager,
-            SignInManager<IdentityUser> signInManager, ApplicationDbContext applicationDbContext)
+        public AdminDashboardController(UserManager<AppUser> userManager,
+            SignInManager<AppUser> signInManager, ApplicationDbContext applicationDbContext)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
@@ -42,26 +42,28 @@ namespace FinalProject.Web.Controllers
         public async Task<IActionResult> StudentDetails(string id)
         {
             var user = await userManager.FindByIdAsync(id);
+            var scholarship = applicationDbContext.Scholarships.ToList();
             var model = new StudentDetails()
             {
-                Name = user.UserName,
+                Name = user.FullName,
                 Email = user.Email,
                 PhoneNumber = user.PhoneNumber,
-                FundDetails = new List<ExpenseDetails>()
-                {
-                    new ExpenseDetails{ Money = 23232, Category = "Education" },
-                    new ExpenseDetails{ Money = 2333232, Category = "Food" },
-                    new ExpenseDetails{ Money = 22, Category = "Health" },
-                }
+                FundDetails = scholarship.Select(x =>
+new Web.Models.AdminDashboard.ExpenseDetails { Id = x.Id, Category = x.TypeOfScholarship, Money = x.Money }).ToList()
             };
             return PartialView(model);
         }
 
 
         [HttpGet]
-        public IActionResult StudentAccount()
+        public async Task<IActionResult> StudentAccount()
         {
-            return View();
+            var model = new StudentAccountModel();
+            var user = await userManager.GetUserAsync(User);
+            model.FullName = user.FullName;
+            model.Email = user.Email;
+            model.PhoneNumber = user.PhoneNumber;
+            return View(model);
         }
 
         [HttpGet]

@@ -1,5 +1,4 @@
 ﻿using FinalProject.Data;
-using FinalProject.Data.Migrations;
 using FinalProject.Models.UserAccount.Account;
 using FinalProject.Models.UserAccount.Scholarship;
 using Microsoft.AspNetCore.Authorization;
@@ -16,12 +15,12 @@ namespace FinalProject.Controllers
     [Authorize]
     public class UserAccountController : Controller
     {
-        private readonly UserManager<IdentityUser> userManager;
-        private readonly SignInManager<IdentityUser> signInManager;
+        private readonly UserManager<AppUser> userManager;
+        private readonly SignInManager<AppUser> signInManager;
         private readonly ApplicationDbContext applicationDbContext;
 
-        public UserAccountController(UserManager<IdentityUser> userManager,
-            SignInManager<IdentityUser> signInManager, ApplicationDbContext applicationDbContext)
+        public UserAccountController(UserManager<AppUser> userManager,
+            SignInManager<AppUser> signInManager, ApplicationDbContext applicationDbContext)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
@@ -46,11 +45,12 @@ namespace FinalProject.Controllers
             if (ModelState.IsValid)
             {
                 // Copy data from RegisterViewModel to IdentityUser
-                var user = new IdentityUser
+                var user = new AppUser
                 {
                     UserName = model.EmailAddress,
                     Email = model.EmailAddress,
-                    PhoneNumber = model.MobilePhone
+                    PhoneNumber = model.MobilePhone,
+                    FullName = model.FullName
                 };
 
                 // Store user data in AspNetUsers database table
@@ -90,7 +90,10 @@ namespace FinalProject.Controllers
         {
             if (signInManager.IsSignedIn(User))
             {
-                return RedirectToAction("UserHome", "UserDashboard");
+                if(User.Identity.Name == "admin@gmail.com")
+                    return RedirectToAction("AdminHome", "AdminDashboard");
+                else
+                    return RedirectToAction("UserHome", "UserDashboard");
             }
             return View();
         }
@@ -124,7 +127,7 @@ namespace FinalProject.Controllers
             var model = new PaymentModel();
             model.CategoryId = id;
             var scholarship = applicationDbContext.Scholarships.FirstOrDefault(x => x.Id == model.CategoryId);
-            model.categoryName = scholarship.TypeOfScholarship;
+            model.categoryName = scholarship != null ? scholarship.TypeOfScholarship : "";
             return View(model);
         }
         

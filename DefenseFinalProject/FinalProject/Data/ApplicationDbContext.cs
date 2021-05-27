@@ -1,4 +1,5 @@
 ﻿using FinalProject.Models.UserAccount.Scholarship;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -14,7 +15,13 @@ namespace FinalProject.Data
         {
         }
         public DbSet<Scholarship> Scholarships { get; set; }
-        public DbSet<Payment> Payments { get; set; }
+        public DbSet<Payment> Payments { get; set; }        
+        public DbSet<AppUser> AppUsers { get; set; }        
+
+    }
+    public class AppUser : IdentityUser
+    {
+        public string FullName { get; set; }
     }
     public class Scholarship
     {
