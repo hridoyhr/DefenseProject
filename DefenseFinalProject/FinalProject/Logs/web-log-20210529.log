@@ -1,0 +1,143 @@
+2021-05-29 00:33:17.816 +06:00 [INF] Application Starting up
+2021-05-29 14:28:21.422 +06:00 [INF] Application Starting up
+2021-05-29 19:28:57.228 +06:00 [INF] Application Starting up
+2021-05-29 22:47:55.621 +06:00 [INF] Application Starting up
+2021-05-29 23:25:01.654 +06:00 [INF] Application Starting up
+2021-05-29 23:25:20.711 +06:00 [WRN] Invalid password for user.
+2021-05-29 23:25:20.714 +06:00 [WRN] User failed to provide the correct password.
+2021-05-29 23:25:24.479 +06:00 [WRN] Invalid password for user.
+2021-05-29 23:25:24.479 +06:00 [WRN] User failed to provide the correct password.
+2021-05-29 23:25:25.127 +06:00 [WRN] Invalid password for user.
+2021-05-29 23:25:25.127 +06:00 [WRN] User failed to provide the correct password.
+2021-05-29 23:25:25.684 +06:00 [WRN] Invalid password for user.
+2021-05-29 23:25:25.685 +06:00 [WRN] User failed to provide the correct password.
+2021-05-29 23:25:26.213 +06:00 [WRN] Invalid password for user.
+2021-05-29 23:25:26.213 +06:00 [WRN] User failed to provide the correct password.
+2021-05-29 23:25:26.737 +06:00 [WRN] Invalid password for user.
+2021-05-29 23:25:26.737 +06:00 [WRN] User failed to provide the correct password.
+2021-05-29 23:25:27.222 +06:00 [WRN] Invalid password for user.
+2021-05-29 23:25:27.223 +06:00 [WRN] User failed to provide the correct password.
+2021-05-29 23:25:38.181 +06:00 [WRN] Invalid password for user.
+2021-05-29 23:25:38.181 +06:00 [WRN] User failed to provide the correct password.
+2021-05-29 23:25:38.971 +06:00 [WRN] Invalid password for user.
+2021-05-29 23:25:38.971 +06:00 [WRN] User failed to provide the correct password.
+2021-05-29 23:25:41.515 +06:00 [WRN] Invalid password for user.
+2021-05-29 23:25:41.515 +06:00 [WRN] User failed to provide the correct password.
+2021-05-29 23:25:42.224 +06:00 [WRN] Invalid password for user.
+2021-05-29 23:25:42.224 +06:00 [WRN] User failed to provide the correct password.
+2021-05-29 23:25:42.842 +06:00 [WRN] Invalid password for user.
+2021-05-29 23:25:42.842 +06:00 [WRN] User failed to provide the correct password.
+2021-05-29 23:25:51.959 +06:00 [WRN] Invalid password for user.
+2021-05-29 23:25:51.959 +06:00 [WRN] User failed to provide the correct password.
+2021-05-29 23:28:24.741 +06:00 [INF] Application Starting up
+2021-05-29 23:28:25.516 +06:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentException: The property FinalProject.Models.UserAccount.Scholarship.SignInModel.PasswordConfirmation could not be found. (Parameter 'propertyName')
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadataProviderExtensions.GetMetadataForProperty(IModelMetadataProvider provider, Type containerType, String propertyName)
+   at Microsoft.AspNetCore.Mvc.DataAnnotations.CompareAttributeAdapter.CompareAttributeWrapper.GetOtherPropertyDisplayName(ModelValidationContextBase validationContext, CompareAttribute attribute)
+   at Microsoft.AspNetCore.Mvc.DataAnnotations.CompareAttributeAdapter.GetErrorMessage(ModelValidationContextBase validationContext)
+   at Microsoft.AspNetCore.Mvc.DataAnnotations.CompareAttributeAdapter.AddValidation(ClientModelValidationContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.DefaultValidationHtmlAttributeProvider.AddValidationAttributes(ViewContext viewContext, ModelExplorer modelExplorer, IDictionary`2 attributes)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ValidationHtmlAttributeProvider.AddAndTrackValidationAttributes(ViewContext viewContext, ModelExplorer modelExplorer, String expression, IDictionary`2 attributes)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.DefaultHtmlGenerator.AddValidationAttributes(ViewContext viewContext, TagBuilder tagBuilder, ModelExplorer modelExplorer, String expression)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.DefaultHtmlGenerator.GenerateInput(ViewContext viewContext, InputType inputType, ModelExplorer modelExplorer, String expression, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.DefaultHtmlGenerator.GeneratePassword(ViewContext viewContext, ModelExplorer modelExplorer, String expression, Object value, Object htmlAttributes)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper.Process(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.RunAsync(TagHelperExecutionContext executionContext)
+   at AspNetCore.Views_UserAccount_SignIn.<ExecuteAsync>b__22_0() in G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\Views\UserAccount\SignIn.cshtml:line 74
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.GetChildContentAsync(Boolean useCachedResult, HtmlEncoder encoder)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.<RunAsync>g__Awaited|0_0(Task task, TagHelperExecutionContext executionContext, Int32 i, Int32 count)
+   at AspNetCore.Views_UserAccount_SignIn.ExecuteAsync() in G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\Views\UserAccount\SignIn.cshtml:line 4
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-05-29 23:36:57.147 +06:00 [INF] Application Starting up
+2021-05-29 23:36:57.970 +06:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentException: The property FinalProject.Models.UserAccount.Scholarship.SignInModel.PasswordConfirmation could not be found. (Parameter 'propertyName')
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadataProviderExtensions.GetMetadataForProperty(IModelMetadataProvider provider, Type containerType, String propertyName)
+   at Microsoft.AspNetCore.Mvc.DataAnnotations.CompareAttributeAdapter.CompareAttributeWrapper.GetOtherPropertyDisplayName(ModelValidationContextBase validationContext, CompareAttribute attribute)
+   at Microsoft.AspNetCore.Mvc.DataAnnotations.CompareAttributeAdapter.GetErrorMessage(ModelValidationContextBase validationContext)
+   at Microsoft.AspNetCore.Mvc.DataAnnotations.CompareAttributeAdapter.AddValidation(ClientModelValidationContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.DefaultValidationHtmlAttributeProvider.AddValidationAttributes(ViewContext viewContext, ModelExplorer modelExplorer, IDictionary`2 attributes)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ValidationHtmlAttributeProvider.AddAndTrackValidationAttributes(ViewContext viewContext, ModelExplorer modelExplorer, String expression, IDictionary`2 attributes)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.DefaultHtmlGenerator.AddValidationAttributes(ViewContext viewContext, TagBuilder tagBuilder, ModelExplorer modelExplorer, String expression)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.DefaultHtmlGenerator.GenerateInput(ViewContext viewContext, InputType inputType, ModelExplorer modelExplorer, String expression, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.DefaultHtmlGenerator.GeneratePassword(ViewContext viewContext, ModelExplorer modelExplorer, String expression, Object value, Object htmlAttributes)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper.Process(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.RunAsync(TagHelperExecutionContext executionContext)
+   at AspNetCore.Views_UserAccount_SignIn.<ExecuteAsync>b__22_0() in G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\Views\UserAccount\SignIn.cshtml:line 74
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.GetChildContentAsync(Boolean useCachedResult, HtmlEncoder encoder)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.<RunAsync>g__Awaited|0_0(Task task, TagHelperExecutionContext executionContext, Int32 i, Int32 count)
+   at AspNetCore.Views_UserAccount_SignIn.ExecuteAsync() in G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\Views\UserAccount\SignIn.cshtml:line 4
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-05-29 23:37:23.161 +06:00 [INF] Application Starting up
+2021-05-29 23:37:28.163 +06:00 [WRN] Invalid password for user.
+2021-05-29 23:37:28.166 +06:00 [WRN] User failed to provide the correct password.
+2021-05-29 23:37:39.817 +06:00 [WRN] Invalid password for user.
+2021-05-29 23:37:39.817 +06:00 [WRN] User failed to provide the correct password.
+2021-05-29 23:38:39.282 +06:00 [WRN] Invalid password for user.
+2021-05-29 23:38:39.283 +06:00 [WRN] User failed to provide the correct password.
+2021-05-29 23:38:55.453 +06:00 [WRN] Invalid password for user.
+2021-05-29 23:38:55.454 +06:00 [WRN] User failed to provide the correct password.
+2021-05-29 23:38:56.133 +06:00 [WRN] Invalid password for user.
+2021-05-29 23:38:56.133 +06:00 [WRN] User failed to provide the correct password.
+2021-05-29 23:39:36.427 +06:00 [INF] Application Starting up
+2021-05-29 23:45:04.003 +06:00 [INF] Application Starting up
+2021-05-29 23:46:06.390 +06:00 [INF] Application Starting up
+2021-05-29 23:47:05.095 +06:00 [INF] Application Starting up
+2021-05-29 23:48:15.069 +06:00 [INF] Application Starting up
+2021-05-29 23:49:36.487 +06:00 [INF] Application Starting up
+2021-05-29 23:53:17.944 +06:00 [INF] Application Starting up
+2021-05-29 23:55:16.539 +06:00 [INF] Application Starting up
+2021-05-29 23:58:42.109 +06:00 [INF] Application Starting up

@@ -20,7 +20,7 @@
         </div>
 
         @* Payment Start *@
-        <div class="card-p mt-p-50 mb-50">
+        <div class="card-p mt-p-50 mb-50" style="width: 600px; margin-bottom: 34px; margin-top: 7px">
             <div class="card-title mx-auto"> Payment </div>
             <form asp-action="payment" method="post">
                 <span id="card-header">Expense Category</span>
@@ -28,25 +28,54 @@
                     <input type="hidden" asp-for="CategoryId" />
                     <input asp-for="categoryName" readonly="readonly" class="form-control" />
                 </div>
-                <span id="card-header">Phone Number</span>
+
+                @*<span id="card-header">Expense Category</span>
+        <div class="row row-1">
+            <input type="hidden" asp-for="CategoryId" />
+            <input asp-for="categoryName" readonly="readonly" class="form-control" />
+        </div>*@
+
+                <span id="card-header">Account Number:</span>
                 <div class="row row-1">
-                    <input asp-for="phoneNumber" class="form-control" />
+                    <div class="col-2">
+                        <img class="img-fluid" src="https://img.icons8.com/color/48/000000/mastercard-logo.png" />
+                    </div>
+                    <div class="col-7">
+                        <input asp-for="phoneNumber" type="text" placeholder="**** **** **** 3193">
+                    </div>
                 </div>
-                <div class="row-1">
-                    <div class="row row-2"> <span id="card-inner">Your name</span> </div>
-                    <div class="row row-2"> <input asp-for="UserName" class="form-control" /> </div>
+
+                <span id="card-header">Account Name:</span>
+                <div class="row row-1">
+                    <div class="col-7">
+                        <input asp-for="UserName" type="text">
+                    </div>
                 </div>
-                <div class="row">
+
+                <span id="card-header">Bill Details:</span>
+                <div class="row row-1">
                     <div class="col">
-                        <div class="row-1">
-                            <div class="row row-2"> <span id="card-inner">Details</span> </div>
-                            <div class="row row-2"> <textarea class="form-control" rows="4" asp-for="Details"></textarea> </div>
-                        </div>
+                        <textarea class="form-control-sm" style="padding: 2.25rem 9.5rem; text-align: left;" rows="4" asp-for="Details"></textarea>
+                    </div>
+                </div>
+
+                @*<span id="card-header">Details</span>
+        <div class="row-1">
+            <div class="col">
+                <div class="row-1">
+                    <div class="row row-2"> <textarea class="form-control" rows="4" asp-for="Details"></textarea> </div>
+                </div>
+            </div>
+        </div>*@
+
+                <span id="card-header">Amount:</span>
+                <div class="row row-1">
+                    <div class="col-sm">
+                        <div class="col-6" style="width: 300px"><input asp-for="money" type="number" placeholder="Money"></div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-6"><input readonly="readonly" asp-for="Date" placeholder="Current Date"></div>
-                    <div class="col-6"><input asp-for="money" type="number" class="form-control" placeholder="Money"></div>
                 </div>
                 <button class="btn-b-green d-flex mx-auto"><b>Submit</b></button>
             </form>
