@@ -31,7 +31,7 @@
                         </div>
                         <div class="d-flex flex-column pt-1 pl-2 pr-2 pb-2 w-100">
                             <h3 class="text-white-50">
-                                Mahmudul Hasan Hridoy
+                                @Model.FullName
                             </h3>
                             <table class="table table-sm table-hover table-borderless header-table table-css">
                                 <tbody>
@@ -102,8 +102,8 @@
                 <table class="table table-sm table-hover border table-css">
                     <thead>
                         <tr>
-                            <th>Fund Type</th>
-                            <th>Fund Money</th>
+                            <th style="font-size: 14px; color: black; font-weight: bold">Fund Type</th>
+                            <th style="font-size: 14px; color: black; font-weight: bold">Fund Money</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -115,7 +115,7 @@
                                 <td><a class="btn btn-secondary" asp-action="Payment" asp-controller="UserAccount" asp-route-id="@item.Id">Payment</a></td>
                             </tr>
                         }
-</table>
+                    </table>
             </div>
 
             <div class="strip-gh mt-4"></div>
@@ -127,5 +127,4 @@
 </div>
 
 @* Account Details End *@
-</div>
 

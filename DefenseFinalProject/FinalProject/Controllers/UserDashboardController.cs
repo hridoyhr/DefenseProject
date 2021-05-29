@@ -52,7 +52,7 @@ namespace FinalProject.Controllers
                 Email = user.Email,
                 PhoneNumber = user.PhoneNumber,
                 FundDetails = scholarship.Select(x =>
-new Web.Models.AdminDashboard.ExpenseDetails { Id = x.Id, Category = x.TypeOfScholarship, Money = x.Money }).ToList()
+                new Web.Models.AdminDashboard.ExpenseDetails { Id = x.Id, Category = x.TypeOfScholarship, Money = x.Money }).ToList()
             };
             return View(model);
         }

@@ -464,3 +464,4 @@ G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProj
 G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\AdminDashboard\StudentDetails.cshtml.g.cs
 G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\AdminDashboard\BuildScholarship.cshtml.g.cs
 G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\AdminDashboard\Scholarship.cshtml.g.cs
+G:\Final Project All Document\Final Year project\DefenseProject\DefenseFinalProject\FinalProject\obj\Debug\net5.0\FinalProject.csprojAssemblyReference.cache

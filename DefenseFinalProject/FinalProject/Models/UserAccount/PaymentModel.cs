@@ -9,7 +9,7 @@ namespace FinalProject.Models.UserAccount.Account
     {
         public int CategoryId { get; set; }
         public string phoneNumber { get; set; }
-        public DateTime Date { get; set; } = DateTime.UtcNow;
+        public DateTime Date { get; set; } = DateTime.Now;
         public string Details { get; set; }
         public string UserName { get; set; }
         public double money { get; set; }

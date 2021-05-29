@@ -84,7 +84,7 @@ namespace FinalProject.Controllers
         }
 
         [AllowAnonymous]
-        //User Sign In
+        //User Sign In Admin
         [HttpGet]
         public async Task<IActionResult> SignIn()
         {
@@ -121,6 +121,7 @@ namespace FinalProject.Controllers
             return View(model);
         }
 
+        //Payment
         [HttpGet]
         public IActionResult Payment(int id)
         {
@@ -145,12 +146,13 @@ namespace FinalProject.Controllers
             return RedirectToAction(nameof(ScholarshipAccount));
         }
 
+        //Scholarship Account
         [HttpGet]
         public async Task<IActionResult> ScholarshipAccount()
         {
             var user = await userManager.GetUserAsync(HttpContext.User);
             var scholarship = applicationDbContext.Scholarships.ToList();
-            var model = new UserMobileChangeModel() { OldMobilePhone = user.PhoneNumber, expenseDetails = scholarship.Select(x => 
+            var model = new UserMobileChangeModel() { FullName = user.FullName,OldMobilePhone = user.PhoneNumber, expenseDetails = scholarship.Select(x => 
             new Web.Models.AdminDashboard.ExpenseDetails {Id = x.Id, Category = x.TypeOfScholarship, Money = x.Money }).ToList()};
             return View(model);
         }
@@ -168,11 +170,10 @@ namespace FinalProject.Controllers
         public async Task<IActionResult> UserChangeMobile(UserMobileChangeModel model)
         {
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 var user = await userManager.GetUserAsync(User);
 
-                // ChangePasswordAsync changes the user password
                 var result = await userManager.SetPhoneNumberAsync(user, model.NewMobilePhone);
 
                 if (!result.Succeeded)

@@ -10,13 +10,15 @@ namespace FinalProject.Models.UserAccount.Account
     public class UserMobileChangeModel 
     {
         [Required]
-        [DataType(DataType.Password)]
-        [Display(Name = "Current password")]
+        [Display(Name = "Full Name")]
+        public string FullName { get; set; }
+
+        [Required]
+        [Display(Name = "Current Phone Number")]
         public string OldMobilePhone { get; set; }
 
         [Required]
-        [DataType(DataType.Password)]
-        [Display(Name = "New Password")]
+        [Display(Name = "New Phone Number")]
         public string NewMobilePhone { get; set; }
         public List<ExpenseDetails> expenseDetails { get; set; }
     }
